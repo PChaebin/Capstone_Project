@@ -23,7 +23,7 @@ public class PlayerData
     public int level = 1;   // 알바스탯
     public int rebrith = 0; // 환생횟수
     public int date = 1; // 날짜
-
+    public bool itemPurchased = false; // 아이템 구매 여부
 }
 
 public class DataManager : MonoBehaviour

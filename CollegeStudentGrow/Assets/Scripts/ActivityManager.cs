@@ -8,7 +8,7 @@ public class ActivityManager : MonoBehaviour
     public TMP_Text dateText;
     public TMP_Text levelText;
 
-    private int activityCount = 0; // 활동 카운트
+    private int activityCount = 0; 
 
     // 학교가기
     public void GoToSchool()
@@ -47,26 +47,24 @@ public class ActivityManager : MonoBehaviour
         Debug.Log("휴식하기 선택됨");
         DataManager.instance.nowPlayer.stress -= 10;  // 스트레스 감소
 
-        // 스트레스가 음수로 내려가지 않도록 처리
+        // 스트레스가 음수로 내려가지 않도록
         DataManager.instance.nowPlayer.stress = Mathf.Max(DataManager.instance.nowPlayer.stress, 0);
 
-        CompleteActivity();  // 활동 후 처리
+        CompleteActivity(); 
     }
 
-    private void CompleteActivity()
+    private void CompleteActivity() // 날짜 갱신
     {
-        // 활동 횟수 증가 및 날짜 갱신
         activityCount++;
-        if (activityCount >= 2)  // 두 번의 활동 후 날짜 증가
+        if (activityCount >= 2)  
         {
             DateUp();
-            activityCount = 0;  // 활동 횟수 초기화
+            activityCount = 0; 
         }
 
-        UpdateUI();  // 화면 UI 갱신
+        UpdateUI();  
     }
 
-    // 날짜 업데이트 함수
     private void DateUp()
     {
         DataManager.instance.nowPlayer.date++;

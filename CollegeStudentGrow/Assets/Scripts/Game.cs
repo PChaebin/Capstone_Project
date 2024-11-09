@@ -28,8 +28,7 @@ public class GaME : MonoBehaviour
     // 활동하기 버튼 클릭 시 호출
     public void PerformActivity()
     {
-        // 활동 UI 활성화, 버튼 숨기기
-        activityUI.SetActive(true);
+        activityUI.SetActive(true); // UI 숨기고 켜기
         activityButton.SetActive(true);
     }
 
@@ -56,8 +55,6 @@ public class GaME : MonoBehaviour
     {
         activityManager.Rest();
     }
-
-    // 저장 함수
     public void Save()
     {
         DataManager.instance.SaveData();

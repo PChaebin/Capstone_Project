@@ -11,7 +11,12 @@ public class GaME : MonoBehaviour
 
     public GameObject activityUI;
     public GameObject activityButton;
+
+    public GameObject storeUI;
+    public GameObject storeButton;
+
     public ActivityManager activityManager;
+    public StoreManager store;
 
     void Start()
     {
@@ -23,14 +28,35 @@ public class GaME : MonoBehaviour
 
         activityUI.SetActive(false);
         activityButton.SetActive(true);  // 활동 버튼 활성화
+
+        storeUI.SetActive(false);
+        storeButton.SetActive(true);  // 상점 버튼
     }
 
-    // 활동하기 버튼 클릭 시 호출
-    public void PerformActivity()
+    public void PerformActivity() // 활동하기 버튼 클릭 시 호출
     {
-        activityUI.SetActive(true); // UI 숨기고 켜기
-        activityButton.SetActive(true);
+        bool isActive = activityUI.activeSelf;
+        activityUI.SetActive(!isActive);
+
     }
+    public void PerformStore() // 상점 버튼 클릭 시 호출
+    {
+        bool isActive = storeUI.activeSelf;
+        storeUI.SetActive(!isActive);
+    }
+
+    public void ExitStore() // 상점 버튼 클릭 시 호출
+    {
+        // Check if the store UI is active
+        bool isActive = storeUI.activeSelf;
+
+        // If it's active, deactivate it (close the store)
+        if (isActive)
+        {
+            storeUI.SetActive(false);
+        }
+    }
+
 
     // 학교가기 버튼 클릭 시 호출
     public void GoToSchool()

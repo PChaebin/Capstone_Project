@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PartTimeJobMiniGame : MonoBehaviour
 {
@@ -22,10 +23,11 @@ public class PartTimeJobMiniGame : MonoBehaviour
 
     [SerializeField] private Button startButton;
     [SerializeField] private GameObject recipeUI;
+    [SerializeField] private TMP_Text countDownText; 
 
     private DrinksList drinks;
 
-    private float recipedisplayTime = 30f;
+    private float recipedisplayTime = 7f;
 
     private void Start()
     {
@@ -45,7 +47,6 @@ public class PartTimeJobMiniGame : MonoBehaviour
     public void gmaeStatus()
     {
         startButton.gameObject.SetActive(false);
-
         recipeUI.SetActive(true);
 
         StartCoroutine(DisplayRecipes());
@@ -53,7 +54,25 @@ public class PartTimeJobMiniGame : MonoBehaviour
 
     private IEnumerator DisplayRecipes()
     {
-        yield return new WaitForSeconds(recipedisplayTime);
+        float countdownStartTime = 3;
+        float remainingTime = recipedisplayTime;
+
+        while(remainingTime > 0)
+        {
+            if(remainingTime <= countdownStartTime)
+            {
+                countDownText.text = Mathf.CeilToInt(remainingTime).ToString();
+                countDownText.gameObject.SetActive(true);
+            }
+
+            yield return new WaitForSeconds(1f);
+            remainingTime--;
+
+            if(remainingTime <= 0)
+            {
+                break;
+            }
+        }
 
         recipeUI.SetActive(false);
     }

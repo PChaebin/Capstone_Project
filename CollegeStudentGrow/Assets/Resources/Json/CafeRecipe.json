@@ -1,0 +1,34 @@
+{
+  "Recipes": [
+    {
+      "Name": "Americano",
+      "FinalImage": "MiniGame/Americano/Americano_4",
+      "steps": [
+        "ice",
+        "water",
+        "aspresso"
+      ],
+      "Description": "현대인 필수품"
+    },
+    {
+      "Name": "cafeLatte",
+      "FinalImage": "MiniGame/cafeLatte/cafeLatte_4",
+      "steps": [
+        "ice",
+        "milk",
+        "aspresso"
+      ],
+      "Description": "라떼는 말이야"
+    },
+    {
+      "Name": "VanillLlatte",
+      "FinalImage": "MiniGame/VanillLlatte/VanillLlatte_4",
+      "steps": [
+        "ice",
+        "milk",
+        "aspresso"
+      ],
+      "Description": "바닐라 라떼"
+    }
+  ]
+}

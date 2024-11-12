@@ -1,0 +1,28 @@
+{
+  "recipes": [
+    {
+      "name" : "Americano",
+      "ingredient": [ "Ice", "Water", "Espresso" ]
+    },
+    {
+      "name" : "CafeLatte",
+      "ingredient": [ "Ice", "Milk", "Espresso" ]
+    },
+    {
+      "name": "VanillaLatte",
+      "ingredient": [ "Ice", "Milk", "Espresso", "VanillaSyrup" ]
+    },
+    {
+      "name": "GrapeFruitAde",
+      "ingredient": [ "GrapefruitJuice", "Ice", "Soda", "GrapeFruitDecorationFruit" ]
+    },
+    {
+      "name": "GreenGrapeAde",
+      "ingredient": [ "GreenGrapeJuice", "Ice", "Soda", "GreenGrapeDecorationFruit" ]
+    },
+    {
+      "name": "LemonAde",
+      "ingredient": [ "LemonJuice", "Ice", "Soda", "LemonDecorationFruit" ]
+    }
+  ]
+}

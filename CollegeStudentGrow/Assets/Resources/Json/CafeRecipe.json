@@ -1,5 +1,5 @@
 {
-  "Recipes": [
+  "Drinks": [
     {
       "Name": "Americano",
       "FinalImage": "MiniGame/Americano/Americano_4",
@@ -26,7 +26,9 @@
       "steps": [
         "ice",
         "milk",
-        "aspresso"
+        "sirup",
+        "aspresso",
+        "mix"
       ],
       "Description": "바닐라 라떼"
     }

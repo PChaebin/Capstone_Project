@@ -15,15 +15,15 @@ using System.IO;
 
 public class PlayerData
 {
-    public string name; // 이름
-    public string grade;// 성적
+    public string name;  // 이름
+    public string grade; // 학점
 
-    public int coin = 10; //돈
-    public int stress = 0; // 스트레스
-    public int level = 1;   // 알바스탯
-    public int rebrith = 0; // 환생횟수
-    public int date = 1; // 날짜
-
+    public int coin = 10;    // 돈
+    public int stress = 0;   // 스트레스
+    public int level = 1;    // 알바 스탯
+    public int rebrith = 0;  // 환생 횟수
+    public int date = 1;     // 날짜
+    public int score = 0;    // 점수 (0~100)
 }
 
 public class DataManager : MonoBehaviour

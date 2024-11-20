@@ -125,10 +125,10 @@ public class ActivityManager : MonoBehaviour
         player.grade = CalculateGrade(player.score);
 
         // UI 업데이트
-        coinText.text = "Coin : " + player.coin.ToString();
+        coinText.text = player.coin.ToString();
         stressText.text = "Stress : " + player.stress.ToString();
-        dateText.text = "Date : " + player.date.ToString();
-        levelText.text = "Level : " + player.level.ToString();
+        dateText.text = player.date.ToString();
+        levelText.text =  player.level.ToString();
         gradeText.text = "Grade : " + player.grade;
         scoreText.text = "Score : " + player.score.ToString();
     }

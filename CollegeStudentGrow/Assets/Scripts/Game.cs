@@ -19,11 +19,12 @@ public class GaME : MonoBehaviour
 
     void Start()
     {
-        name.text += DataManager.instance.nowPlayer.name;
-        level.text += DataManager.instance.nowPlayer.level.ToString();
-        coin.text += DataManager.instance.nowPlayer.coin.ToString();
-        date.text += DataManager.instance.nowPlayer.date.ToString();
-        stress.text += DataManager.instance.nowPlayer.stress.ToString();
+        // UI √ ±‚»≠
+        name.text = "Name: " + DataManager.instance.nowPlayer.name;
+        level.text = "Level: " + DataManager.instance.nowPlayer.level.ToString();
+        coin.text = "Coin: " + DataManager.instance.nowPlayer.coin.ToString();
+        date.text = "Date: " + DataManager.instance.nowPlayer.date.ToString();
+        stress.text = "Stress: " + DataManager.instance.nowPlayer.stress.ToString();
 
         activityUI.SetActive(false);
         activityButton.SetActive(true);

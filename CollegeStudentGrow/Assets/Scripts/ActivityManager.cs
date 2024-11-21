@@ -15,28 +15,28 @@ public class ActivityManager : MonoBehaviour
     public Button storeButton;        // 상점 버튼
 
     public TMP_Text gradeText; // 학점 UI 텍스트
-    public TMP_Text scoreText;
+    public TMP_Text scoreText; // 스코어 텍스트
 
     private int activityCount = 0;
 
     private void Start()
     {
         countdownPanel.SetActive(false); // 시작 시 비활성화
+        UpdateUI(); // 초기 UI 업데이트
     }
 
     public void GoToSchool()
     {
         Debug.Log("학교 가기 선택됨");
         DataManager.instance.nowPlayer.stress += 5;  // 스트레스 증가
-        DataManager.instance.nowPlayer.score += 5;
+        DataManager.instance.nowPlayer.score += 5; // 스코어 증가
         StartCoroutine(ShowCountdownPanel());
         CompleteActivity();
     }
 
     private IEnumerator ShowCountdownPanel()
     {
-        // 모든 버튼 비활성화
-        SetButtonsInteractable(false);
+        SetButtonsInteractable(false); // 모든 버튼 비활성화
 
         countdownPanel.SetActive(true); // 카운트다운 활성화
         int countdown = 5;
@@ -59,10 +59,9 @@ public class ActivityManager : MonoBehaviour
             button.interactable = interactable; // 활동 버튼 상호작용 설정
         }
 
-        // 상점 버튼도 비활성화/활성화
         if (storeButton != null)
         {
-            storeButton.interactable = interactable;
+            storeButton.interactable = interactable; // 상점 버튼 상호작용 설정
         }
     }
 
@@ -109,12 +108,16 @@ public class ActivityManager : MonoBehaviour
         }
 
         UpdateUI();
+        DataManager.instance.SaveData(); // 활동 후 자동 저장
+        FindObjectOfType<EndingManager>().CheckEnding(); // 엔딩 조건 확인
     }
 
     private void DateUp()
     {
         DataManager.instance.nowPlayer.date++;
-        dateText.text = "Date : " + DataManager.instance.nowPlayer.date.ToString();
+        Debug.Log("Date Updated: " + DataManager.instance.nowPlayer.date); // 디버깅
+        DataManager.instance.SaveData(); // 날짜 업데이트 후 저장
+        dateText.text = "날짜: " + DataManager.instance.nowPlayer.date.ToString();
     }
 
     private void UpdateUI()
@@ -128,7 +131,7 @@ public class ActivityManager : MonoBehaviour
         coinText.text = player.coin.ToString();
         stressText.text = "Stress : " + player.stress.ToString();
         dateText.text = player.date.ToString();
-        levelText.text =  player.level.ToString();
+        levelText.text = player.level.ToString();
         gradeText.text = "Grade : " + player.grade;
         scoreText.text = "Score : " + player.score.ToString();
     }

@@ -9,6 +9,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
+        this.transform.SetAsLastSibling();
         DefaultPos = this.transform.position;
     }
 

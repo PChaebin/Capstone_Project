@@ -43,3 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 749247517
+    locked: 0
+  - name: Ingredients
+    uniqueID: 3365646537
+    locked: 0
+  - name: Recipe
+    uniqueID: 769882013
+    locked: 0

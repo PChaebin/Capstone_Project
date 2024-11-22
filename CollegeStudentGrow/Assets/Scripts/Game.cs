@@ -3,82 +3,40 @@ using TMPro;
 
 public class GaME : MonoBehaviour
 {
-    public TMP_Text name;
-    public TMP_Text date;
-    public TMP_Text level;
-    public TMP_Text coin;
-    public TMP_Text stress;
-
-    public GameObject activityUI;
-    public GameObject activityButton;
-
-    public GameObject storeUI;
-    public GameObject storeButton;
-
+    public TMP_Text nameText, dateText, levelText, coinText, stressText;
+    public GameObject activityUI, storeUI, activityButton, storeButton;
     public ActivityManager activityManager;
 
-    void Start()
+    private void Start()
     {
-        // UI 초기화
-        name.text = "Name: " + DataManager.instance.nowPlayer.name;
-        level.text = "Level: " + DataManager.instance.nowPlayer.level.ToString();
-        coin.text = "Coin: " + DataManager.instance.nowPlayer.coin.ToString();
-        date.text = "Date: " + DataManager.instance.nowPlayer.date.ToString();
-        stress.text = "Stress: " + DataManager.instance.nowPlayer.stress.ToString();
-
+        UpdateUI();
         activityUI.SetActive(false);
-        activityButton.SetActive(true);
-
         storeUI.SetActive(false);
-        storeButton.SetActive(true);
     }
 
-    public void PerformActivity() // 활동하기 버튼 클릭 시 호출
+    public void PerformActivity()
     {
-        bool isActive = activityUI.activeSelf;
-        activityUI.SetActive(!isActive);
+        activityUI.SetActive(!activityUI.activeSelf);
     }
 
-    public void PerformStore() // 상점 버튼 클릭 시 호출
+    public void PerformStore()
     {
-        bool isActive = storeUI.activeSelf;
-        storeUI.SetActive(!isActive);
+        storeUI.SetActive(!storeUI.activeSelf);
     }
 
     public void ExitStore()
     {
-        if (storeUI.activeSelf)
-        {
-            storeUI.SetActive(false);
-        }
+        storeUI.SetActive(false);
     }
 
-    // 학교가기 버튼
-    public void GoToSchool()
+    public void UpdateUI()
     {
-        activityManager.GoToSchool();
-    }
+        var player = DataManager.instance.nowPlayer;
 
-    // 알바하기 버튼
-    public void DoPartTimeJob()
-    {
-        activityManager.DoPartTimeJob();
-    }
-
-    // 놀러가기 버튼
-    public void GoOnTrip()
-    {
-        activityManager.GoOnTrip();
-    }
-
-    // 휴식하기 버튼
-    public void Rest()
-    {
-        activityManager.Rest();
-    }
-
-    public void Save()
-    {
-        DataManager.instance.SaveData();
+        nameText.text = $"Name: {player.name}";
+        dateText.text = $"Date: {player.date}";
+        levelText.text = $"Level: {player.level}";
+        coinText.text = $"Coin: {player.coin}";
+        stressText.text = $"Stress: {player.stress}";
     }
 }

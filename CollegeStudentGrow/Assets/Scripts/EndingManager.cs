@@ -62,6 +62,11 @@ public class EndingManager : MonoBehaviour
         endingPanel.SetActive(false);
         Time.timeScale = 1;
     }
+    public void QuitGame()
+    {
+        Debug.Log("게임 종료");
+        Application.Quit(); // 실제 게임 빌드에서 작동
+    }
 
     private void ResetPlayerData()
     {

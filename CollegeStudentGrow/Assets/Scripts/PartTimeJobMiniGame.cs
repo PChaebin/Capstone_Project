@@ -44,7 +44,7 @@ public class PartTimeJobMiniGame : MonoBehaviour
         }
     }
 
-    public void gmaeStatus()
+    public void gameStatus()
     {
         startButton.gameObject.SetActive(false);
         recipeUI.SetActive(true);

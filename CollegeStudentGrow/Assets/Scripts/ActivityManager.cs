@@ -139,13 +139,13 @@ public class ActivityManager : MonoBehaviour
     private string CalculateGrade(int score)
     {
         if (score >= 95) return "A+";
-        else if (score >= 90) return "A";
-        else if (score >= 85) return "B+";
-        else if (score >= 80) return "B";
-        else if (score >= 75) return "C+";
-        else if (score >= 70) return "C";
-        else if (score >= 65) return "D+";
-        else if (score >= 60) return "D";
+        else if (score >= 85) return "A";
+        else if (score >= 75) return "B+";
+        else if (score >= 65) return "B";
+        else if (score >= 55) return "C+";
+        else if (score >= 45) return "C";
+        else if (score >= 35) return "D+";
+        else if (score >= 25) return "D";
         else return "F";
     }
 }

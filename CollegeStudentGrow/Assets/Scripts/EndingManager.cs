@@ -17,36 +17,49 @@ public class EndingManager : MonoBehaviour
     void Start()
     {
         player = DataManager.instance.nowPlayer; // 현재 플레이어 데이터 가져오기
+        if (endingPanel == null || endingText == null)
+        {
+            Debug.LogError("EndingPanel 또는 EndingText가 Inspector에서 설정되지 않았습니다.");
+            return;
+        }
         Debug.Log("현재 날짜 (player.date): " + player.date);
         endingPanel.SetActive(false); // 시작 시 엔딩 UI 비활성화
     }
 
     public void CheckEnding()
     {
-        string title = "";
-        string message = "";
+        Debug.Log($"CheckEnding 호출됨: 현재 날짜 = {player.date}, 점수 = {player.score}, 학점 = {player.grade}");
 
-        if (player.date >= 30) // 엔딩 조건
+        if (player.date >= 30) // 날짜 조건 충족
         {
-            if (player.grade == "A+" && player.score >= 95)
+            string title = "";
+            string message = "";
+
+            if (player.grade == "A+" && player.score >= 95) // 조건 불충족
             {
                 title = "대기업 취직 성공";
                 message = "축하합니다! A+ 성적으로 대기업에 취직했습니다!";
             }
-            else if (player.grade == "B" || player.grade == "B+")
+            else if (player.grade == "B" || player.grade == "B+") // 조건 불충족
             {
                 title = "중소기업 취직 성공";
                 message = "보통 성적으로 중소기업에 취직했습니다!";
             }
-            else
+            else // 평범한 인생 메시지
             {
                 title = "평범한 인생";
                 message = "평범한 삶을 살았습니다.";
             }
 
-            ShowEnding(title, message);
+            ShowEnding(title, message); // 이 코드가 실행될 가능성이 높음
         }
+        else
+        {
+            Debug.Log("엔딩 조건 미충족");
+        }
+
     }
+
 
     private void ShowEnding(string title, string message)
     {
@@ -62,6 +75,7 @@ public class EndingManager : MonoBehaviour
         endingPanel.SetActive(false);
         Time.timeScale = 1;
     }
+
     public void QuitGame()
     {
         Debug.Log("게임 종료");

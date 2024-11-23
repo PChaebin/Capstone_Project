@@ -22,14 +22,14 @@ public class ActivityManager : MonoBehaviour
     public void GoToSchool()
     {
         Debug.Log("학교 가기 선택됨");
-        ModifyPlayerData(stress: 5, score: 5);
+        ModifyPlayerData(stress: 10, score: 5);
         StartCoroutine(ShowCountdownPanel());
     }
 
     public void DoPartTimeJob()
     {
         Debug.Log("알바하기 선택됨");
-        ModifyPlayerData(coin: 20, stress: 3);
+        ModifyPlayerData(coin: 20, stress: 10);
         StartCoroutine(ShowCountdownPanel());
     }
 
@@ -100,8 +100,20 @@ public class ActivityManager : MonoBehaviour
     private void DateUp()
     {
         DataManager.instance.nowPlayer.date++;
-        Debug.Log("날짜가 증가했습니다.");
+        Debug.Log("DateUp() 호출됨, 현재 날짜: " + DataManager.instance.nowPlayer.date);
+
+        var endingManager = FindObjectOfType<EndingManager>();
+        if (endingManager != null)
+        {
+            Debug.Log("EndingManager.CheckEnding 호출");
+            endingManager.CheckEnding();
+        }
+        else
+        {
+            Debug.LogWarning("EndingManager를 찾을 수 없습니다.");
+        }
     }
+
 
     private void UpdateUI()
     {
@@ -111,7 +123,7 @@ public class ActivityManager : MonoBehaviour
 
         coinText.text = $"Coin: {player.coin}";
         stressText.text = $"Stress: {player.stress}";
-        dateText.text = $"Date: {player.date}";
+        dateText.text = $"{player.date}";
         levelText.text = $"Level: {player.level}";
         gradeText.text = $"Grade: {player.grade}";
         scoreText.text = $"Score: {player.score}";

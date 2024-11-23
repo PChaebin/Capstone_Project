@@ -13,6 +13,7 @@ public class PlayerData
     public int date = 1;     // 날짜
     public int score = 0;    // 점수
 }
+
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;

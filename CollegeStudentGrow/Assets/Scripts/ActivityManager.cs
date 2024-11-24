@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ActivityManager : MonoBehaviour
 {
@@ -23,6 +23,7 @@ public class ActivityManager : MonoBehaviour
     {
         Debug.Log("학교 가기 선택됨");
         ModifyPlayerData(stress: 10, score: 5);
+        activityCount++;
         StartCoroutine(ShowCountdownPanel());
     }
 
@@ -87,30 +88,29 @@ public class ActivityManager : MonoBehaviour
     private void CompleteActivity()
     {
         activityCount++;
+
+        // 활동 2번이 완료되면 날짜 증가
         if (activityCount >= 2)
         {
             DateUp();
-            activityCount = 0;
+            activityCount = 0; // 활동 카운트 초기화
         }
 
         UpdateUI();
         DataManager.instance.SaveData();
     }
 
+
     private void DateUp()
     {
         DataManager.instance.nowPlayer.date++;
         Debug.Log("DateUp() 호출됨, 현재 날짜: " + DataManager.instance.nowPlayer.date);
 
+        // 엔딩 조건 확인
         var endingManager = FindObjectOfType<EndingManager>();
         if (endingManager != null)
         {
-            Debug.Log("EndingManager.CheckEnding 호출");
             endingManager.CheckEnding();
-        }
-        else
-        {
-            Debug.LogWarning("EndingManager를 찾을 수 없습니다.");
         }
     }
 
@@ -123,11 +123,12 @@ public class ActivityManager : MonoBehaviour
 
         coinText.text = $"Coin: {player.coin}";
         stressText.text = $"Stress: {player.stress}";
-        dateText.text = $"{player.date}";
+        dateText.text = $"{player.date}"; // 날짜 UI 업데이트
         levelText.text = $"Level: {player.level}";
         gradeText.text = $"Grade: {player.grade}";
         scoreText.text = $"Score: {player.score}";
     }
+
 
     private string CalculateGrade(int score)
     {
@@ -140,5 +141,10 @@ public class ActivityManager : MonoBehaviour
         if (score >= 35) return "D+";
         if (score >= 25) return "D";
         return "F";
+    }
+
+    public int GetActivityCount()
+    {
+        return activityCount;
     }
 }

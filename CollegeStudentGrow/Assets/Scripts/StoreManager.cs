@@ -84,7 +84,7 @@ public class StoreManager : MonoBehaviour
         // 현재 페이지의 아이템 정보 업데이트
         itemPriceText.text = $"Price: {itemPrices[currentPage]}";
         itemPreview.sprite = itemSprites[currentPage];
-        currentPageText.text = $"Page: {currentPage + 1}/{maxPage}";
+        currentPageText.text = $"Page: {currentPage + 1}/{maxPage}"; // 페이지 표시 수정 (1부터 시작)
     }
 
     private void DisplayItemOnGameScreen(Sprite itemSprite)

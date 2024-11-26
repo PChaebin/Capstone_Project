@@ -32,35 +32,36 @@ public class ActivityManager : MonoBehaviour
             UpdateUI();
         }
 
-        public void GoToSchool()
-        {
-            Debug.Log("학교 가기 선택됨");
-            ModifyPlayerData(stress: 10, score: 5);
-            StartCoroutine(ShowCountdownPanelWithImage(schoolImage));
-        }
+    public void GoToSchool()
+    {
+        Debug.Log("학교 가기 선택됨");
+        ModifyPlayerData(stress: 10, score: 5);
+        StartCoroutine(ShowCountdownPanelWithImage(schoolImage, "수업 듣는 중"));
+    }
 
-        public void DoPartTimeJob()
-        {
-            Debug.Log("알바하기 선택됨");
-            ModifyPlayerData(coin: 20, stress: 10);
-            StartCoroutine(ShowCountdownPanelWithImage(partTimeJobImage));
-        }
+    public void DoPartTimeJob()
+    {
+        Debug.Log("알바하기 선택됨");
+        ModifyPlayerData(coin: 20, stress: 10);
+        StartCoroutine(ShowCountdownPanelWithImage(partTimeJobImage, "알바하는 중"));
+    }
 
-        public void GoOnTrip()
-        {
-            Debug.Log("놀러가기 선택됨");
-            ModifyPlayerData(coin: -15, stress: -5);
-            StartCoroutine(ShowCountdownPanelWithImage(tripImage));
-        }
+    public void GoOnTrip()
+    {
+        Debug.Log("놀러가기 선택됨");
+        ModifyPlayerData(coin: -15, stress: -5);
+        StartCoroutine(ShowCountdownPanelWithImage(tripImage, "놀러가는 중"));
+    }
 
-        public void Rest()
-        {
-            Debug.Log("휴식하기 선택됨");
-            ModifyPlayerData(stress: -10);
-            StartCoroutine(ShowCountdownPanelWithImage(restImage));
-        }
+    public void Rest()
+    {
+        Debug.Log("휴식하기 선택됨");
+        ModifyPlayerData(stress: -10);
+        StartCoroutine(ShowCountdownPanelWithImage(restImage, "휴식하는 중"));
+    }
 
-        private void ModifyPlayerData(int coin = 0, int stress = 0, int score = 0)
+
+    private void ModifyPlayerData(int coin = 0, int stress = 0, int score = 0)
         {
             var player = DataManager.instance.nowPlayer;
 
@@ -71,30 +72,59 @@ public class ActivityManager : MonoBehaviour
             CompleteActivity();
         }
 
-        private IEnumerator ShowCountdownPanelWithImage(GameObject activityImage)
+    private IEnumerator ShowCountdownPanelWithImage(GameObject activityImage, string activityText)
+    {
+        SetButtonsInteractable(false);
+        countdownPanel.SetActive(true);
+
+        activityImage.SetActive(true);
+
+        int countdown = 5;
+        while (countdown > 0)
         {
-            SetButtonsInteractable(false);
-            countdownPanel.SetActive(true);
-
-            // 이미지 표시
-            activityImage.SetActive(true);
-
-            int countdown = 5;
-            while (countdown > 0)
-            {
-                countdownText.text = countdown.ToString();
-                yield return new WaitForSeconds(1);
-                countdown--;
-            }
-
-            // 이미지 숨기기
-            activityImage.SetActive(false);
-
-            countdownPanel.SetActive(false);
-            SetButtonsInteractable(true);
+            yield return StartCoroutine(AnimateCountdownText($"{activityText}{new string('.', 3 - countdown % 3)}"));
+            countdown--;
         }
 
-        private void SetButtonsInteractable(bool interactable)
+
+        activityImage.SetActive(false);
+        countdownPanel.SetActive(false);
+        SetButtonsInteractable(true);
+    }
+
+    private IEnumerator AnimateCountdownText(string text)
+    {
+        float fadeDuration = 0.5f;
+        float fadeOutTime = 0f;
+
+        countdownText.text = text;
+        countdownText.alpha = 0f;
+
+        while (fadeOutTime < fadeDuration)
+        {
+            fadeOutTime += Time.deltaTime;
+            countdownText.alpha = fadeOutTime / fadeDuration;
+            yield return null;
+        }
+
+        countdownText.alpha = 1f;
+
+        yield return new WaitForSeconds(0.5f);
+
+        fadeOutTime = 0f;
+        while (fadeOutTime < fadeDuration)
+        {
+            fadeOutTime += Time.deltaTime;
+            countdownText.alpha = 1f - (fadeOutTime / fadeDuration);
+            yield return null;
+        }
+
+        countdownText.alpha = 0f;
+    }
+
+
+
+    private void SetButtonsInteractable(bool interactable)
         {
             foreach (var button in actionButtons)
             {
@@ -110,7 +140,7 @@ public class ActivityManager : MonoBehaviour
             if (activityCount >= 2)
             {
                 DateUp();
-                activityCount = 0; // 활동 카운트 초기화
+                activityCount = 0; 
             }
 
             UpdateUI();

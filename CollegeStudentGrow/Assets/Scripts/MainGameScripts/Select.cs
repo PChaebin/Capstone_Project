@@ -9,6 +9,7 @@ public class Select : MonoBehaviour
     public GameObject creat;
     public TMP_Text[] slotText;
     public TMP_Text newPlayerName;
+    public SceneChanger sceneChanger; // SceneChanger 스크립트 참조
     bool[] savefile = new bool[3];
 
     void Start()
@@ -40,28 +41,18 @@ public class Select : MonoBehaviour
         {
             DataManager.instance.LoadData(); // 데이터 로드
             Debug.Log($"슬롯 {number} 데이터 불러오기 완료: {DataManager.instance.nowPlayer.name}");
-            GoGame(); // 씬 전환
         }
         else
         {
-            Creat();
+            Creat(); // 새로운 데이터 생성
         }
+
+        // 씬 전환
+        sceneChanger.FadeToLevel(1);
     }
 
     public void Creat()
     {
         creat.gameObject.SetActive(true); // 새로운 플레이어 생성 UI 활성화
-    }
-
-    public void GoGame()
-    {
-        if (!savefile[DataManager.instance.nowSlot]) // 저장된 데이터가 없는 경우
-        {
-            DataManager.instance.nowPlayer.name = newPlayerName.text; // 플레이어 이름 설정
-            DataManager.instance.SaveData(); // 데이터 저장
-            Debug.Log($"새로운 데이터 저장: {newPlayerName.text}");
-        }
-
-        SceneManager.LoadScene(1); // 게임 씬으로 전환
     }
 }

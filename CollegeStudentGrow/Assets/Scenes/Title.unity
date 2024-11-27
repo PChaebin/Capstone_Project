@@ -1165,6 +1165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 424202222}
   fadeTime: 1
+  isFadeInOnStart: 1
 --- !u!224 &855077451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1214,6 +1215,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a01b1b80ac6e34c88ea76f4178f4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nowPlayer:
+    name: 
+    grade: 
+    coin: 10
+    stress: 0
+    level: 1
+    rebrith: 0
+    date: 1
+    score: 0
+    purchasedItems: 0000000000000000
   nowSlot: 0
 --- !u!4 &873141082
 Transform:

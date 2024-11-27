@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 
+[System.Serializable]
 public class PlayerData
 {
     public string name;  // 이름
@@ -12,6 +13,13 @@ public class PlayerData
     public int rebrith = 0;  // 환생 횟수
     public int date = 1;     // 날짜
     public int score = 0;    // 점수
+
+    public bool[] purchasedItems; // 구매한 아이템 상태 저장
+
+    public PlayerData()
+    {
+        purchasedItems = new bool[10]; // 예제: 10개의 아이템 (아이템 개수는 실제 필요에 맞게 조정)
+    }
 }
 
 public class DataManager : MonoBehaviour
@@ -62,3 +70,4 @@ public class DataManager : MonoBehaviour
         }
     }
 }
+

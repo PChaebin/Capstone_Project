@@ -75,5 +75,5 @@ public class PartTimeJobMiniGame : MonoBehaviour
         }
 
         recipeUI.SetActive(false);
-    }
+    }    
 }

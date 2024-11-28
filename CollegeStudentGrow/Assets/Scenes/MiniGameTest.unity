@@ -1626,10 +1626,10 @@ RectTransform:
   - {fileID: 48029727}
   - {fileID: 1303852089}
   - {fileID: 2002209304}
-  - {fileID: 1916272611}
   - {fileID: 850375018}
   - {fileID: 1414382336}
   - {fileID: 878061182}
+  - {fileID: 1916272611}
   m_Father: {fileID: 1990285498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4477,6 +4477,26 @@ PrefabInstance:
     - target: {fileID: 150229241094169111, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
       propertyPath: m_Name
       value: Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.2513991
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.2513991
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.2528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3862970432
       objectReference: {fileID: 0}
     - target: {fileID: 4272147319780359390, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
       propertyPath: text

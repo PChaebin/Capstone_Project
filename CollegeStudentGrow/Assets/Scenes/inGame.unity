@@ -1319,8 +1319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7610e6ce1dd23c24b92c85f82df13869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endingText: {fileID: 731847551}
-  endingPanel: {fileID: 1068462218}
   activityManager: {fileID: 185868383}
 --- !u!1 &251206727
 GameObject:
@@ -3181,9 +3179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 185868384}
-  fadeAnimator: {fileID: 0}
-  fadeTime: 0.5
-  isFadeInOnStart: 1
+  fadeTime: 2
 --- !u!1 &730179122
 GameObject:
   m_ObjectHideFlags: 0

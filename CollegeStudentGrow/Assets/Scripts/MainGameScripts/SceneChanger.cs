@@ -4,65 +4,55 @@ using System.Collections;
 
 public class SceneChanger : MonoBehaviour
 {
-    public CanvasGroup canvasGroup; // 페이드 효과를 위한 CanvasGroup
-    public Animator fadeAnimator; // Animator로 페이드 효과 제어
-    public float fadeTime = 2f; // 페이드 인/아웃 시간
-    public bool isFadeInOnStart = true; // 시작 시 페이드 인 여부
+    public CanvasGroup canvasGroup; // CanvasGroup으로 페이드 효과 구현
+    public float fadeTime = 2f; // 페이드 인/아웃에 걸리는 시간
 
-    private int levelToLoad; // 로드할 씬 인덱스
+    private int levelToLoad; // 로드할 씬의 인덱스
 
     private void Start()
     {
         if (canvasGroup != null)
         {
-            // CanvasGroup을 사용하는 경우
-            if (SceneManager.GetActiveScene().buildIndex == 0)
-            {
-                canvasGroup.alpha = 1f; // 초기 알파 값 설정
-            }
-            else if (isFadeInOnStart)
-            {
-                canvasGroup.alpha = 0f; // 시작 시 페이드 인
-                LeanTween.alphaCanvas(canvasGroup, 1f, fadeTime).setEase(LeanTweenType.easeInOutQuad);
-            }
-        }
-        else if (fadeAnimator != null)
-        {
-            // Animator를 사용하는 경우
-            if (isFadeInOnStart)
-            {
-                fadeAnimator.SetTrigger("FadeIn");
-            }
+            // 씬 시작 시 페이드인 효과 (알파값: 0 → 1)
+            canvasGroup.alpha = 0f; // 시작은 완전히 투명
+            StartCoroutine(FadeIn());
         }
     }
 
     public void FadeToLevel(int levelIndex)
     {
-        levelToLoad = levelIndex; // 전환할 씬 인덱스 설정
-
-        if (canvasGroup != null)
-        {
-            // CanvasGroup을 사용하는 페이드 아웃
-            LeanTween.alphaCanvas(canvasGroup, 0f, fadeTime).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
-            {
-                SceneManager.LoadScene(levelToLoad); // 씬 로드
-            });
-        }
-        else if (fadeAnimator != null)
-        {
-            // Animator를 사용하는 페이드 아웃
-            StartCoroutine(LoadLevel(levelIndex));
-        }
+        levelToLoad = levelIndex; // 전환할 씬의 인덱스를 저장
+        StartCoroutine(FadeOutAndLoad());
     }
 
-    private IEnumerator LoadLevel(int levelIndex)
+    private IEnumerator FadeIn()
     {
-        if (fadeAnimator != null)
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeTime)
         {
-            fadeAnimator.SetTrigger("FadeOut"); // 페이드 아웃 트리거
-            yield return new WaitForSeconds(1f); // 페이드 아웃 대기 시간
+            canvasGroup.alpha = elapsedTime / fadeTime; // 알파값: 0 → 1
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
 
-        SceneManager.LoadScene(levelIndex); // 씬 전환
+        canvasGroup.alpha = 1f; // 페이드인이 완료되면 알파값을 1로 설정
+    }
+
+    private IEnumerator FadeOutAndLoad()
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeTime)
+        {
+            canvasGroup.alpha = 1f - (elapsedTime / fadeTime); // 알파값: 1 → 0
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0f; // 페이드아웃 완료 후 알파값을 0으로 설정
+
+        // 씬 전환
+        SceneManager.LoadScene(levelToLoad);
     }
 }

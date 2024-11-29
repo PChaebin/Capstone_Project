@@ -1,33 +1,31 @@
 using System.IO;
 using UnityEngine;
+using System;
 
-[System.Serializable]
+[Serializable]
 public class PlayerData
 {
-    public string name;  // 이름
-    public string grade; // 학점
-
-    public int coin = 10;    // 돈
-    public int stress = 0;   // 스트레스
-    public int level = 1;    // 레벨
-    public int rebrith = 0;  // 환생 횟수
-    public int date = 1;     // 날짜
-    public int score = 0;    // 점수
-
-    public bool[] purchasedItems; // 구매한 아이템 상태 저장
+    public string name;
+    public string grade;
+    public int coin = 10;
+    public int stress = 0;
+    public int level = 1;
+    public int rebrith = 0;
+    public int date = 1;
+    public int score = 0;
+    public string endingType = ""; // 엔딩 타입 저장 ("success", "expelled", "bankrupt", "stress")
+    public bool[] purchasedItems;
 
     public PlayerData()
     {
-        purchasedItems = new bool[10]; // 예제: 10개의 아이템 (아이템 개수는 필요에 맞게 조정)
+        purchasedItems = new bool[10];
     }
 }
-
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
-
     public PlayerData nowPlayer = new PlayerData();
-    public string path { get; private set; } // 저장 경로
+    public string path { get; private set; }
     public int nowSlot = 0;
 
     private void Awake()
@@ -40,10 +38,9 @@ public class DataManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            return;
         }
 
-        path = Application.persistentDataPath + "/save"; // 저장 경로 설정
+        path = Application.persistentDataPath + "/save";
     }
 
     public void SaveData()
@@ -66,7 +63,7 @@ public class DataManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"로드 실패: {filePath} 파일이 없습니다. 기본 데이터 사용.");
-            nowPlayer = new PlayerData(); // 기본 데이터로 초기화
+            nowPlayer = new PlayerData();
         }
     }
 }

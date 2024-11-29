@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 
 [System.Serializable]
 public class PlayerData
@@ -18,7 +18,7 @@ public class PlayerData
 
     public PlayerData()
     {
-        purchasedItems = new bool[10]; // 예제: 10개의 아이템 (아이템 개수는 실제 필요에 맞게 조정)
+        purchasedItems = new bool[10]; // 예제: 10개의 아이템 (아이템 개수는 필요에 맞게 조정)
     }
 }
 
@@ -27,7 +27,7 @@ public class DataManager : MonoBehaviour
     public static DataManager instance;
 
     public PlayerData nowPlayer = new PlayerData();
-    public string path { get; private set; } // 경로를 public으로 노출 (읽기 전용)
+    public string path { get; private set; } // 저장 경로
     public int nowSlot = 0;
 
     private void Awake()
@@ -44,7 +44,6 @@ public class DataManager : MonoBehaviour
         }
 
         path = Application.persistentDataPath + "/save"; // 저장 경로 설정
-        LoadData(); // 시작 시 데이터 로드
     }
 
     public void SaveData()
@@ -67,7 +66,7 @@ public class DataManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"로드 실패: {filePath} 파일이 없습니다. 기본 데이터 사용.");
+            nowPlayer = new PlayerData(); // 기본 데이터로 초기화
         }
     }
 }
-

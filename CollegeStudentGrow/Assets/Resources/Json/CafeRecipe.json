@@ -1,5 +1,5 @@
 {
-  "Drinks": [
+  "drinksList": [
     {
       "Name": "Americano",
       "FinalImage": "MiniGame/Americano/Americano_4",

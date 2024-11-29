@@ -45,11 +45,23 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
 
     private void MovePage()
     {
+        if (RecipePagesRect == null)
+        {
+            Debug.LogError("RecipePagesRect가 null입니다. 올바르게 설정되었는지 확인하세요.");
+            return;
+        }
+
         RecipePagesRect.LeanMoveLocal(targetPos, tweenTime).setEase(tweenType);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (RecipePagesRect == null)
+        {
+            Debug.LogError("RecipePagesRect가 null입니다. 드래그 이벤트를 처리할 수 없습니다.");
+            return;
+        }
+
         if (Mathf.Abs(eventData.position.x - eventData.pressPosition.x) > dragThreshould)
         {
             if (eventData.position.x < eventData.pressPosition.x)
@@ -64,6 +76,14 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
         else
         {
             MovePage();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (RecipePagesRect != null)
+        {
+            LeanTween.cancel(RecipePagesRect.gameObject);
         }
     }
 }

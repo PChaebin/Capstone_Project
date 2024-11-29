@@ -28,13 +28,25 @@ public class RecipeManager : MonoBehaviour
     /// <summary>
     /// Json 데이터 로드 함수
     /// </summary>
-    private void LoadRecipesToJson()
+    public void LoadRecipesToJson()
     {
         TextAsset jsonFile = Resources.Load<TextAsset>("Json/CafeRecipe");
+        Debug.Log("json 파일 읽음");
 
         if (jsonFile != null)
         {
+            Debug.Log("JSON 파일 내용: " + jsonFile.text);
             drinks = JsonUtility.FromJson<DrinksList>(jsonFile.text);
+            Debug.Log("json 파일 읽음2");
+
+            if (drinks != null && drinks.drinksList.Count > 0)
+            {
+                Debug.Log($"로드된 레시피 개수: {drinks.drinksList.Count}");
+            }
+            else
+            {
+                Debug.LogError("JSON 파싱 실패 또는 데이터가 비어 있습니다.");
+            }
         }
         else
         {
@@ -55,7 +67,7 @@ public class RecipeManager : MonoBehaviour
         }
 
         List<Drinks> selectedRecipes = new List<Drinks>();
-        List<Drinks> usedIndexes = new List<int>();
+        List<int> usedIndexes = new List<int>();
 
         for(int i = 0; i < recipeCount; i++)
         {

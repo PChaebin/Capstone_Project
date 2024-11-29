@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 1496538941774544920}
   - component: {fileID: 7566796808602152778}
   - component: {fileID: 7678003291892527129}
+  - component: {fileID: 8486740101421627601}
   m_Layer: 5
   m_Name: Recipe_Page
   m_TagString: Untagged
@@ -154,6 +155,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8486740101421627601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117458054791014979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2c78735c5c4243b931fc58ee6ac6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeName: {fileID: 3526556789936106417}
+  recipeFinalImg: {fileID: 8435263936836060206}
+  recipeDescription: {fileID: 234759755684093832}
 --- !u!1 &6331346125873350269
 GameObject:
   m_ObjectHideFlags: 0

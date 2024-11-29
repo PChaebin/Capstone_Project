@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class RecipeUIManager : MonoBehaviour
 {
@@ -13,20 +15,28 @@ public class RecipeUIManager : MonoBehaviour
 
     private float recipedisplayTime = 7f;
 
-    public void showRecipesUI(List<Drinks> recipes)
+    public void showRecipesUI(List<Drinks> drinks)
     {
+        InitUI(drinks);
         StartCoroutine(DisplayRecipes());
     }
 
-    public void InitUI(List<Drinks> recipes)
+    public void InitUI(List<Drinks> drinks)
     {
-        foreach(var recipe in recipes)
+        Debug.Log($"drinks 리스트 길이: {drinks.Count}");
+
+        foreach (Transform child in contentParent)
+        {
+            LeanTween.cancel(child.gameObject);
+            Destroy(child.gameObject);
+        }
+
+        foreach(var drink in drinks)
         {
             GameObject newPage = Instantiate(recipePagePrefab, contentParent);
-            recipePagePrefab page = newPage.GetComponent<recipePage>();
+            RecipePage page = newPage.GetComponent<RecipePage>();
 
-            page.recipeName.text = recipe.Name;
-            page.recipeID.text = recipe.ID;
+            page.SetPage(drink);
         }
     }
 
@@ -58,4 +68,10 @@ public class RecipeUIManager : MonoBehaviour
 
         recipeUI.SetActive(false);
     }
+
+    private void OnDestroy()
+    {
+        LeanTween.reset(); // 모든 LeanTween 애니메이션 초기화
+    }
+
 }

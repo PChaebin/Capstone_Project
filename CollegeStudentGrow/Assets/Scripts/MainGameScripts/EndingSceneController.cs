@@ -38,13 +38,12 @@ public class EndingSceneController : MonoBehaviour
 
     private IEnumerator StartWithFadeIn()
     {
-        
+        // 이미지 1을 미리 활성화 (투명 상태로)
+        image1.gameObject.SetActive(true);
+
         // 처음 페이드 인 효과 실행
         yield return StartCoroutine(FadeIn());
 
-        // 첫 번째 이미지 활성화
-        image1.gameObject.SetActive(true);
-        
         // 대기 후 첫 번째 이미지에서 두 번째 이미지로 전환
         yield return new WaitForSeconds(delayTime);
         yield return StartCoroutine(FadeOut());

@@ -18,9 +18,24 @@ public class PlayerData
 
     public PlayerData()
     {
-        purchasedItems = new bool[10];
+        purchasedItems = new bool[10]; // 아이템 배열 기본 크기
+    }
+
+    // 데이터 초기화 (아이템 배열과 엔딩 타입 제외)
+    public void ResetData()
+    {
+        coin = 10;
+        score = 0;
+        grade = "";
+        date = 1;
+        level = 1;
+        rebrith += 1;
+        stress = 0;
+
+        // purchasedItems, endingType은 초기화하지 않음
     }
 }
+
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
@@ -59,6 +74,12 @@ public class DataManager : MonoBehaviour
             string data = File.ReadAllText(filePath);
             nowPlayer = JsonUtility.FromJson<PlayerData>(data);
             Debug.Log($"데이터 로드 완료: {filePath}");
+
+            // 엔딩 타입이 비어 있으면 기본값 설정
+            if (string.IsNullOrEmpty(nowPlayer.endingType))
+            {
+                nowPlayer.endingType = "normal"; // 예시로 기본값을 설정
+            }
         }
         else
         {
@@ -66,4 +87,12 @@ public class DataManager : MonoBehaviour
             nowPlayer = new PlayerData();
         }
     }
+
+    public void ResetPlayerData()
+    {
+        // 아이템 배열과 엔딩 타입을 제외한 나머지 데이터 초기화
+        nowPlayer.ResetData();
+        SaveData(); // 초기화된 데이터를 저장
+    }
+
 }

@@ -75,13 +75,22 @@ public class EndingManager : MonoBehaviour
         }
 
         // 성공 엔딩
-        if (player.date >= 30 && player.score >= 60)
+        if (player.date >= 30 && player.score >= 90)
         {
             player.endingType = "success";
             DataManager.instance.SaveData();
             LoadEndingScene(2);
             return;
         }
+        //노말 엔딩
+        if (player.date >= 30 && player.score >= 60)
+        {
+            player.endingType = "normal";
+            DataManager.instance.SaveData();
+            LoadEndingScene(2);
+            return;
+        }
+
 
         Debug.Log("엔딩 조건 미충족");
     }

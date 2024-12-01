@@ -1,5 +1,5 @@
 {
-  "Drinks": [
+  "drinksList": [
     {
       "Name": "Americano",
       "FinalImage": "MiniGame/Americano/Americano_4",
@@ -26,11 +26,40 @@
       "steps": [
         "ice",
         "milk",
-        "sirup",
         "aspresso",
-        "mix"
+        "spoon"
       ],
       "Description": "바닐라 라떼"
+    },
+    {
+      "Name": "GrapeFruitAde",
+      "FinalImage": "MiniGame/Americano/GrapeFruitAde_4",
+      "steps": [
+        "ice",
+        "soda",
+        "grapefruit"
+      ],
+      "Description": "상콤한 자몽에이드"
+    },
+    {
+      "Name": "GreenGrapeAde",
+      "FinalImage": "MiniGame/Americano/GreenGrapeAde_4",
+      "steps": [
+        "ice",
+        "soda",
+        "grapefruit_2"
+      ],
+      "Description": "상콤한 청포도에이드"
+    },
+    {
+      "Name": "LemonAde",
+      "FinalImage": "MiniGame/Americano/LemonAde_4",
+      "steps": [
+        "ice",
+        "soda",
+        "lemon"
+      ],
+      "Description": "상콤한 레몬에이드"
     }
   ]
 }

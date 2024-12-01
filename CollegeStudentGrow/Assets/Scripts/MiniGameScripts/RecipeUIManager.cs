@@ -12,8 +12,10 @@ public class RecipeUIManager : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private GameObject recipeUI;
     [SerializeField] private TMP_Text countDownText;
+    [SerializeField] private GameObject bulrPanel;
 
     private float recipedisplayTime = 7f;
+    bool gameStartSignal = false;
 
     public void showRecipesUI(List<Drinks> drinks)
     {
@@ -21,6 +23,10 @@ public class RecipeUIManager : MonoBehaviour
         StartCoroutine(DisplayRecipes());
     }
 
+    /// <summary>
+    /// drinks 리스트를 사용한 ui 세팅 함수
+    /// </summary>
+    /// <param name="drinks"></param>
     public void InitUI(List<Drinks> drinks)
     {
         Debug.Log($"drinks 리스트 길이: {drinks.Count}");
@@ -67,11 +73,15 @@ public class RecipeUIManager : MonoBehaviour
         }
 
         recipeUI.SetActive(false);
+        countDownText.gameObject.SetActive(false);
+        bulrPanel.gameObject.SetActive(false);
+        
+        // 타이머 시작
+        StartCoroutine(FindObjectOfType<Timer>().StartTimer());
     }
 
     private void OnDestroy()
     {
         LeanTween.reset(); // 모든 LeanTween 애니메이션 초기화
     }
-
 }

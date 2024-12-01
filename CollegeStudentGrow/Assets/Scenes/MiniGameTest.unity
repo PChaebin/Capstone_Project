@@ -299,6 +299,7 @@ MonoBehaviour:
   startButton: {fileID: 768132645}
   recipeUI: {fileID: 1783350562}
   countDownText: {fileID: 1763122991}
+  bulrPanel: {fileID: 692617869}
 --- !u!4 &218013712
 Transform:
   m_ObjectHideFlags: 0
@@ -2024,11 +2025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2177379019480898492, guid: 55dfd55d5616aa0418b63a2e9a922ccb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -350
+      value: -325
       objectReference: {fileID: 0}
     - target: {fileID: 2177379019480898492, guid: 55dfd55d5616aa0418b63a2e9a922ccb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -480
+      value: -490
       objectReference: {fileID: 0}
     - target: {fileID: 2177379019480898492, guid: 55dfd55d5616aa0418b63a2e9a922ccb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2344,6 +2345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeManager: {fileID: 519823637}
   recipeUIManager: {fileID: 218013711}
+  startButton: {fileID: 768132645}
+  gameUI: {fileID: 1904016699}
 --- !u!1 &1617663266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,6 +2933,14 @@ PrefabInstance:
       value: Timer
       objectReference: {fileID: 0}
     - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
+      propertyPath: m_text
+      value: '00 : 00'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
+      propertyPath: m_fontSize
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
       propertyPath: m_fontColor.a
       value: 0.9019608
       objectReference: {fileID: 0}
@@ -2946,6 +2957,10 @@ PrefabInstance:
       value: 0.2528302
       objectReference: {fileID: 0}
     - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761386524566570259, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 3862970432
       objectReference: {fileID: 0}
@@ -2955,7 +2970,7 @@ PrefabInstance:
       objectReference: {fileID: 712251545}
     - target: {fileID: 4272147319780359390, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
       propertyPath: time
-      value: 30
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4272147319780359390, guid: 04d4e7854d0ea624cafad3dce8892db1, type: 3}
       propertyPath: curTime

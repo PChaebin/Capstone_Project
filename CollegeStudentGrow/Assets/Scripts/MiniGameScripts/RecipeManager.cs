@@ -69,11 +69,11 @@ public class RecipeManager : MonoBehaviour
         List<Drinks> selectedRecipes = new List<Drinks>();
         List<int> usedIndexes = new List<int>();
 
-        for(int i = 0; i < recipeCount; i++)
+        while(selectedRecipes.Count < recipeCount)
         {
             int randomIndex = Random.Range(0, drinks.drinksList.Count);
 
-            if(!usedIndexes.Contains(randomIndex))
+            if (!usedIndexes.Contains(randomIndex))
             {
                 usedIndexes.Add(randomIndex);
                 selectedRecipes.Add(drinks.drinksList[randomIndex]);

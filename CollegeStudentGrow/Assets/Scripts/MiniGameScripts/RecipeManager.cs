@@ -9,6 +9,7 @@ using UnityEngine;
 public class Drinks
 {
     public string Name;
+    public string FinalImageFile;
     public string FinalImage;
     public List<string> steps;
     public string Description;

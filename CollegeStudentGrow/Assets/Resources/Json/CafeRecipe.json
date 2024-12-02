@@ -2,7 +2,8 @@
   "drinksList": [
     {
       "Name": "Americano",
-      "FinalImage": "MiniGame/Americano/Americano_4",
+      "FinalImageFile": "MiniGame/Americano",
+      "FinalImage": "Americano_4",
       "steps": [
         "ice",
         "water",
@@ -12,7 +13,8 @@
     },
     {
       "Name": "cafeLatte",
-      "FinalImage": "MiniGame/cafeLatte/cafeLatte_4",
+      "FinalImageFile": "MiniGame/CafeLatte",
+      "FinalImage": "CafeLatte_4",
       "steps": [
         "ice",
         "milk",
@@ -22,7 +24,8 @@
     },
     {
       "Name": "VanillLlatte",
-      "FinalImage": "MiniGame/VanillLlatte/VanillLlatte_4",
+      "FinalImageFile": "MiniGame/VanillLlatte",
+      "FinalImage": "VanillLlatte_4",
       "steps": [
         "ice",
         "milk",
@@ -33,7 +36,8 @@
     },
     {
       "Name": "GrapeFruitAde",
-      "FinalImage": "MiniGame/Americano/GrapeFruitAde_4",
+      "FinalImageFile": "MiniGame/GrapeFruitAde",
+      "FinalImage": "GrapefruitAde_5",
       "steps": [
         "ice",
         "soda",
@@ -42,8 +46,9 @@
       "Description": "상콤한 자몽에이드"
     },
     {
-      "Name": "GreenGrapeAde",
-      "FinalImage": "MiniGame/Americano/GreenGrapeAde_4",
+      "Name": "GreengrapeAde",
+      "FinalImageFile": "MiniGame/GreengrapeAde",
+      "FinalImage": "GreengrapeAde_5",
       "steps": [
         "ice",
         "soda",
@@ -53,7 +58,8 @@
     },
     {
       "Name": "LemonAde",
-      "FinalImage": "MiniGame/Americano/LemonAde_4",
+      "FinalImageFile": "MiniGame/LemonAde",
+      "FinalImage": "LemonAde_5",
       "steps": [
         "ice",
         "soda",

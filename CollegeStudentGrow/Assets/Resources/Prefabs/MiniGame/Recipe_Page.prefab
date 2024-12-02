@@ -170,6 +170,7 @@ MonoBehaviour:
   recipeName: {fileID: 3526556789936106417}
   recipeFinalImg: {fileID: 8435263936836060206}
   recipeDescription: {fileID: 234759755684093832}
+  recipeSteps: {fileID: 5760442986905977566}
 --- !u!1 &6331346125873350269
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC544\uBA54\uB9AC\uCE74\uB178"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aff933cd95e73d043bce9fc07aa80712, type: 2}
   m_sharedMaterial: {fileID: -96350605487038405, guid: aff933cd95e73d043bce9fc07aa80712, type: 2}
@@ -369,7 +370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1. \uC5BC\uC74C \uB123\uAE30\r\n2. \uBB3C \uB123\uAE30\r\n3. \uC0F7 \uB123\uAE30"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aff933cd95e73d043bce9fc07aa80712, type: 2}
   m_sharedMaterial: {fileID: -96350605487038405, guid: aff933cd95e73d043bce9fc07aa80712, type: 2}
@@ -396,8 +397,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 7
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -503,7 +504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC7A0\uC774 \uD655 \uAE68\uB294 \n\uC544\uC774\uC2A4\n \uC544\uBA54\uB9AC\uCE74\uB178"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aff933cd95e73d043bce9fc07aa80712, type: 2}
   m_sharedMaterial: {fileID: -96350605487038405, guid: aff933cd95e73d043bce9fc07aa80712, type: 2}

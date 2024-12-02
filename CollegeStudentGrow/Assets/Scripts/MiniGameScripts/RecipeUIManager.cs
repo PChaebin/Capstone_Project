@@ -78,10 +78,7 @@ public class RecipeUIManager : MonoBehaviour
         
         // 타이머 시작
         StartCoroutine(FindObjectOfType<Timer>().StartTimer());
-    }
 
-    private void OnDestroy()
-    {
-        LeanTween.reset(); // 모든 LeanTween 애니메이션 초기화
+        LeanTween.cancel(recipeUI);
     }
 }

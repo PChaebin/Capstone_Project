@@ -12,13 +12,25 @@ public class RecipePage : MonoBehaviour
     public TextMeshProUGUI recipeName;
     public Image recipeFinalImg;
     public TextMeshProUGUI recipeDescription;
+    public TextMeshProUGUI recipeSteps;
 
     public void SetPage(Drinks drink)
     {
         recipeName.text = drink.Name;
         recipeDescription.text = drink.Description;
 
-        Sprite sprite = Resources.Load<Sprite>(drink.FinalImage);
-        recipeFinalImg.sprite = sprite;
+        recipeSteps.text += string.Join("\n", drink.steps);
+
+        Debug.Log($"Attempting to load sprite from path: {drink.FinalImage}");
+
+        selectImage(drink);
+    }
+
+    private void selectImage(Drinks drink)
+    {
+        Sprite[] sprites = Resources.LoadAll<Sprite>(drink.FinalImageFile);
+
+        Sprite finalSprtie = System.Array.Find<Sprite>(sprites, sprite => sprite.name == drink.FinalImage);
+        recipeFinalImg.sprite = finalSprtie;
     }
 }

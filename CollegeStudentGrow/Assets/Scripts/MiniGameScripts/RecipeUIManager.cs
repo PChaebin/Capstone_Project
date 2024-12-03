@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class RecipeUIManager : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class RecipeUIManager : MonoBehaviour
     [SerializeField] private GameObject bulrPanel;
 
     private float recipedisplayTime = 7f;
-    bool gameStartSignal = false;
 
     public void showRecipesUI(List<Drinks> drinks)
     {

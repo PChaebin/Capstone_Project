@@ -19,7 +19,7 @@ public class RecipePage : MonoBehaviour
         recipeName.text = drink.Name;
         recipeDescription.text = drink.Description;
 
-        recipeSteps.text += string.Join("\n", drink.steps);
+        recipeSteps.text += string.Join("\n", drink.Recipes);
 
         Debug.Log($"Attempting to load sprite from path: {drink.FinalImage}");
 
@@ -32,5 +32,12 @@ public class RecipePage : MonoBehaviour
 
         Sprite finalSprtie = System.Array.Find<Sprite>(sprites, sprite => sprite.name == drink.FinalImage);
         recipeFinalImg.sprite = finalSprtie;
+
+        recipeFinalImg.SetNativeSize();
+
+        RectTransform rectTransform = recipeFinalImg.GetComponent<RectTransform>();
+
+        float scaleFactor = 0.4f; // 원하는 크기 조절 비율
+        rectTransform.sizeDelta = rectTransform.sizeDelta * scaleFactor;
     }
 }

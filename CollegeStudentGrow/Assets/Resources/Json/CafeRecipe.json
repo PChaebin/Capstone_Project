@@ -4,6 +4,11 @@
       "Name": "Americano",
       "FinalImageFile": "MiniGame/Americano",
       "FinalImage": "Americano_4",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 물 넣기",
+        "3. 에스프레소 넣기"
+      ],
       "steps": [
         "ice",
         "water",
@@ -15,6 +20,11 @@
       "Name": "cafeLatte",
       "FinalImageFile": "MiniGame/CafeLatte",
       "FinalImage": "CafeLatte_4",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 우유 넣기",
+        "3. 에스프레소 넣기"
+      ],
       "steps": [
         "ice",
         "milk",
@@ -26,6 +36,12 @@
       "Name": "VanillLlatte",
       "FinalImageFile": "MiniGame/VanillLlatte",
       "FinalImage": "VanillLlatte_4",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 우유 넣기",
+        "3. 에스프레소 넣기",
+        "4. 스푼으로 섞기"
+      ],
       "steps": [
         "ice",
         "milk",
@@ -38,6 +54,11 @@
       "Name": "GrapeFruitAde",
       "FinalImageFile": "MiniGame/GrapeFruitAde",
       "FinalImage": "GrapefruitAde_5",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 소다 넣기",
+        "3. 자몽청 넣기"
+      ],
       "steps": [
         "ice",
         "soda",
@@ -49,6 +70,11 @@
       "Name": "GreengrapeAde",
       "FinalImageFile": "MiniGame/GreengrapeAde",
       "FinalImage": "GreengrapeAde_5",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 소다 넣기",
+        "3. 청포도청 넣기"
+      ],
       "steps": [
         "ice",
         "soda",
@@ -60,6 +86,11 @@
       "Name": "LemonAde",
       "FinalImageFile": "MiniGame/LemonAde",
       "FinalImage": "LemonAde_5",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 소다 넣기",
+        "3. 레몬청 넣기"
+      ],
       "steps": [
         "ice",
         "soda",

@@ -11,6 +11,7 @@ public class Drinks
     public string Name;
     public string FinalImageFile;
     public string FinalImage;
+    public List<string> Recipes;
     public List<string> steps;
     public string Description;
 }
@@ -61,6 +62,8 @@ public class RecipeManager : MonoBehaviour
     /// <returns></returns>
     public List<Drinks> GetRandomRecipes()
     {
+        Queue<Drinks> recipes = new Queue<Drinks>();
+
         if(drinks == null || drinks.drinksList.Count == 0)
         {
             Debug.LogError("레시피 Json 파일이 존재하지않음!!");
@@ -78,6 +81,7 @@ public class RecipeManager : MonoBehaviour
             {
                 usedIndexes.Add(randomIndex);
                 selectedRecipes.Add(drinks.drinksList[randomIndex]);
+                recipes.Enqueue(drinks.drinksList[randomIndex]);
             }
         }
 

@@ -18,7 +18,7 @@ public class RecipeUIManager : MonoBehaviour
     [SerializeField] private GameObject recipeUI;
     [SerializeField] private TMP_Text countDownText;
     [SerializeField] private GameObject bulrPanel;
-
+    [SerializeField] private GameObject currentDrinkImgUI;
     [SerializeField] private GameObject cupUI;
 
     private float recipedisplayTime = 7f;

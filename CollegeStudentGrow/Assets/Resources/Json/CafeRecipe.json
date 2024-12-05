@@ -40,13 +40,13 @@
         "1. 얼음 넣기",
         "2. 우유 넣기",
         "3. 에스프레소 넣기",
-        "4. 스푼으로 섞기"
+        "4. 바닐라 시럽 넣기"
       ],
       "steps": [
         "ice",
         "milk",
         "coffee",
-        "spoon"
+        "vanilla"
       ],
       "Description": "바닐라 라떼"
     },
@@ -57,12 +57,14 @@
       "Recipes": [
         "1. 얼음 넣기",
         "2. 소다 넣기",
-        "3. 자몽청 넣기"
+        "3. 자몽청 넣기",
+        "4. 스푼으로 섞기"
       ],
       "steps": [
         "ice",
-        "soda",
-        "grapefruit"
+        "grapefruit",
+        "sprite",
+        "spoon"
       ],
       "Description": "상콤한 자몽에이드"
     },
@@ -73,12 +75,14 @@
       "Recipes": [
         "1. 얼음 넣기",
         "2. 소다 넣기",
-        "3. 청포도청 넣기"
+        "3. 청포도청 넣기",
+        "4. 스푼으로 섞기"
       ],
       "steps": [
         "ice",
-        "soda",
-        "greengrape"
+        "greengrape",
+        "sprite",
+        "spoon"
       ],
       "Description": "상콤한 청포도에이드"
     },
@@ -89,12 +93,14 @@
       "Recipes": [
         "1. 얼음 넣기",
         "2. 소다 넣기",
-        "3. 레몬청 넣기"
+        "3. 레몬청 넣기",
+        "4. 스푼으로 섞기"
       ],
       "steps": [
         "ice",
-        "soda",
-        "lemon"
+        "lemon",
+        "sprite",
+        "spoon"
       ],
       "Description": "상콤한 레몬에이드"
     }

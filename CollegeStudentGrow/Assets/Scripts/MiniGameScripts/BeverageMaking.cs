@@ -23,6 +23,9 @@ public class BeverageMaking : MonoBehaviour
     [Header("레몬에이드 스프라이트")]
     [SerializeField] List<Sprite> LemonAdeSprites = new List<Sprite>();
 
+    [Header("빈 컵 스프라이트")]
+    [SerializeField] Sprite emptyCupSprite;
+
     private Dictionary<string, List<Sprite>> drinkSpriteMap;
 
     private RecipeManager recipeManager;
@@ -31,6 +34,8 @@ public class BeverageMaking : MonoBehaviour
     private Drinks currentDrink;
 
     private int currentStepIndex = 0;
+
+    private Sprite sprite;
 
     private void Start()
     {
@@ -49,6 +54,9 @@ public class BeverageMaking : MonoBehaviour
         InitDrinkSpriteMap();
     }
 
+    /// <summary>
+    /// Dictionary로 음료 - 스프라이트 맵핑
+    /// </summary>
     private void InitDrinkSpriteMap()
     {
         drinkSpriteMap = new Dictionary<string, List<Sprite>>
@@ -62,9 +70,13 @@ public class BeverageMaking : MonoBehaviour
         };
     }
 
+    /// <summary>
+    /// 플레이어가 추가한 재료 확인, 음료 제작 단계
+    /// </summary>
+    /// <param name="ingredientName"></param>
     public void CheckIngredient(string ingredientName)
     {
-        if (ingredientName == currentDrink.steps[currentStepIndex])
+        if (currentStepIndex < currentDrink.steps.Count && ingredientName == currentDrink.steps[currentStepIndex])
         {
             currentStepIndex++;
 
@@ -72,23 +84,25 @@ public class BeverageMaking : MonoBehaviour
             CupUIChange();
 
             // 레시피 완료 확인
-            if (currentStepIndex >= currentDrink.steps.Count)
+            if (currentStepIndex == currentDrink.steps.Count)
             {
                 Debug.Log($"음료 {currentDrink.Name} 완성!");
+                FinalCupImage();
 
                 // 다음 레시피 넘어가기
-                NextRcipe();
+                NextRecipe();
             }
         }
     }
 
+    /// <summary>
+    /// 음료 제작 과정 이미지 변경
+    /// </summary>
     private void CupUIChange()
     {
-        Sprite sprite;
-
         if (drinkSpriteMap.TryGetValue(currentDrink.Name, out List<Sprite> sprites))
         {
-            if(currentStepIndex - 1 < sprites.Count)
+            if(currentStepIndex <= sprites.Count)
             {
                 sprite = sprites[currentStepIndex - 1];
                 RecipeUIManager.Instance.ChangeCupImg(sprite);
@@ -96,13 +110,51 @@ public class BeverageMaking : MonoBehaviour
         }
     }
 
-    private void NextRcipe()
+    /// <summary>
+    /// 음료 완성 이미지 변경
+    /// </summary>
+    private void FinalCupImage()
+    {
+        if (drinkSpriteMap.TryGetValue(currentDrink.Name, out List<Sprite> sprites))
+        {
+            if (sprites.Count > 0)
+            {
+                sprite = sprites[currentStepIndex];
+                Debug.Log("인덱스 " + (currentStepIndex - 1));
+                RecipeUIManager.Instance.ChangeCupImg(sprite);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 빈 컵으로 이미지 변경
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator EmptyCupImage()
+    {
+        yield return new WaitForSeconds(2f);
+
+        if (emptyCupSprite != null)
+        {
+            RecipeUIManager.Instance.ChangeCupImg(emptyCupSprite);
+        }
+    }
+
+    /// <summary>
+    /// 다음 레시피로 넘기기
+    /// </summary>
+    private void NextRecipe()
     {
         if (recipesQueue.Count > 0)
         {
             recipesQueue.Dequeue();
-            currentDrink = recipesQueue.Peek();
-            currentStepIndex = 0;
+            if(recipesQueue.Count > 0)
+            {
+                currentDrink = recipesQueue.Peek();
+                currentStepIndex = 0;
+
+                StartCoroutine(EmptyCupImage());
+            }
         }
         else
         {

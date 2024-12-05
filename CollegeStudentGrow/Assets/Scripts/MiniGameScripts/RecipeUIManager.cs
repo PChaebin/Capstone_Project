@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using static UnityEngine.GraphicsBuffer;
+using UnityEngine.U2D;
 
 public class RecipeUIManager : MonoBehaviour
 {
+    public static RecipeUIManager Instance { get; private set; }
+
     [SerializeField] private GameObject recipePagePrefab;
     [SerializeField] private Transform contentParent;
 
@@ -15,7 +19,21 @@ public class RecipeUIManager : MonoBehaviour
     [SerializeField] private TMP_Text countDownText;
     [SerializeField] private GameObject bulrPanel;
 
+    [SerializeField] private GameObject cupUI;
+
     private float recipedisplayTime = 7f;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void showRecipesUI(List<Drinks> drinks)
     {
@@ -80,5 +98,24 @@ public class RecipeUIManager : MonoBehaviour
         StartCoroutine(FindObjectOfType<Timer>().StartTimer());
 
         LeanTween.cancel(recipeUI);
+    }
+
+    /// <summary>
+    /// 플레이어가 선택한 재료가 레시피와 일치할 때 제작중인 컵 이미지 변경 
+    /// </summary>
+    public void ChangeCupImg(Sprite newCupSprite)
+    {
+        if (cupUI == null)
+        {
+            Debug.LogError("씬에 배치된 컵 ui가 설정되지않음");
+        }
+
+        Image cupImage = cupUI.GetComponent<Image>();
+
+        if (cupImage != null)
+        {
+            cupImage.sprite = newCupSprite;
+        }
+
     }
 }

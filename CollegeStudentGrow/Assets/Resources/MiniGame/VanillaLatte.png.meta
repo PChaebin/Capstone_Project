@@ -93,11 +93,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VanillLlatte_0
+      name: VanillaLatte_0
       rect:
         serializedVersion: 2
         x: 27
@@ -105,98 +131,98 @@ TextureImporter:
         width: 50
         height: 87
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e200e2ad4a834c42883a5a1c29a651f
-      internalID: 227316471
+      spriteID: 24d9b8c8ae77bea42b751776f6128ea0
+      internalID: 1788364853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VanillLlatte_1
+      name: VanillaLatte_1
       rect:
         serializedVersion: 2
         x: 87
         y: 23
         width: 50
         height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdd3a2819a07bc641890e59c7bf4c31c
-      internalID: 671126560
+      spriteID: e0296bba67d3a6f4ca6b880f90564078
+      internalID: 1794882933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VanillLlatte_2
+      name: VanillaLatte_2
       rect:
         serializedVersion: 2
         x: 153
         y: 23
         width: 50
         height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82a64591de9bd224eac8bda4a549af64
-      internalID: 1328784793
+      spriteID: e983aba847e12dc468b2de99f4a0bdce
+      internalID: 1490082707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VanillLlatte_3
+      name: VanillaLatte_3
       rect:
         serializedVersion: 2
         x: 216
         y: 22
         width: 50
         height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d8fbe01c871ee6449bb926462677280
-      internalID: 1564076160
+      spriteID: d5f4864ce5468e5418108395604f47b0
+      internalID: 1965554932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VanillLlatte_4
+      name: VanillaLatte_4
       rect:
         serializedVersion: 2
         x: 279
         y: 23
         width: 50
         height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6422c35010cdceb4fbe39a4d57d82e60
-      internalID: 415608889
+      spriteID: 80e85e5ad6b631f42a0259cd874c092f
+      internalID: 611639807
       vertices: []
       indices: 
       edges: []
@@ -212,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      VanillLlatte_0: 227316471
-      VanillLlatte_1: 671126560
-      VanillLlatte_2: 1328784793
-      VanillLlatte_3: 1564076160
-      VanillLlatte_4: 415608889
+      VanillaLatte_0: 1788364853
+      VanillaLatte_1: 1794882933
+      VanillaLatte_2: 1490082707
+      VanillaLatte_3: 1965554932
+      VanillaLatte_4: 611639807
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

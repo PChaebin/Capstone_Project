@@ -1,4 +1,4 @@
-{
+ {
   "drinksList": [
     {
       "Name": "Americano",
@@ -12,12 +12,12 @@
       "steps": [
         "ice",
         "water",
-        "aspresso"
+        "coffee"
       ],
       "Description": "현대인 필수품"
     },
     {
-      "Name": "cafeLatte",
+      "Name": "CafeLatte",
       "FinalImageFile": "MiniGame/CafeLatte",
       "FinalImage": "CafeLatte_4",
       "Recipes": [
@@ -28,14 +28,14 @@
       "steps": [
         "ice",
         "milk",
-        "aspresso"
+        "coffee"
       ],
       "Description": "라떼는 말이야"
     },
     {
-      "Name": "VanillLlatte",
-      "FinalImageFile": "MiniGame/VanillLlatte",
-      "FinalImage": "VanillLlatte_4",
+      "Name": "VanillaLatte",
+      "FinalImageFile": "MiniGame/VanillaLatte",
+      "FinalImage": "VanillaLatte_4",
       "Recipes": [
         "1. 얼음 넣기",
         "2. 우유 넣기",
@@ -45,7 +45,7 @@
       "steps": [
         "ice",
         "milk",
-        "aspresso",
+        "coffee",
         "spoon"
       ],
       "Description": "바닐라 라떼"
@@ -78,7 +78,7 @@
       "steps": [
         "ice",
         "soda",
-        "grapefruit_2"
+        "greengrape"
       ],
       "Description": "상콤한 청포도에이드"
     },

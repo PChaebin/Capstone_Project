@@ -14,7 +14,7 @@ public class SceneChanger : MonoBehaviour
         if (canvasGroup != null)
         {
             // 씬 시작 시 페이드인 효과 (알파값: 0 → 1)
-            canvasGroup.alpha = 0f; // 시작은 완전히 투명
+            canvasGroup.alpha = 0f; // 시작은 투명
             StartCoroutine(FadeIn());
         }
     }
@@ -52,7 +52,6 @@ public class SceneChanger : MonoBehaviour
 
         canvasGroup.alpha = 0f; // 페이드아웃 완료 후 알파값을 0으로 설정
 
-        // 씬 전환
         SceneManager.LoadScene(levelToLoad);
     }
 }

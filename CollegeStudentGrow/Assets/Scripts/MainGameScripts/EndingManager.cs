@@ -12,18 +12,11 @@ public class EndingManager : MonoBehaviour
     void Start()
     {
         player = DataManager.instance.nowPlayer;
-
-        if (activityManager == null)
-        {
-            Debug.LogError("ActivityManager가 Inspector에서 설정되지 않았습니다.");
-            return;
-        }
+  
     }
 
     public void CheckEnding()
     {
-        Debug.Log($"CheckEnding 호출됨: 날짜={player.date}, 점수={player.score}, 학점={player.grade}");
-
         // 실패 엔딩 - 제적 엔딩
         if (player.date >= 30 && player.score < 60)
         {
@@ -91,8 +84,6 @@ public class EndingManager : MonoBehaviour
             return;
         }
 
-
-        Debug.Log("엔딩 조건 미충족");
     }
 
     private void LoadEndingScene(int sceneIndex)
@@ -100,10 +91,6 @@ public class EndingManager : MonoBehaviour
         if (sceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(sceneIndex);
-        }
-        else
-        {
-            Debug.LogError($"씬 {sceneIndex}은(는) 빌드 설정에 추가되지 않았습니다.");
         }
     }
 }

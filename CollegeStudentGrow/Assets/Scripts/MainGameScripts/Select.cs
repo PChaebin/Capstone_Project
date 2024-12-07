@@ -23,7 +23,6 @@ public class Select : MonoBehaviour
                 DataManager.instance.nowSlot = i;
                 DataManager.instance.LoadData(); // 데이터 로드
                 slotText[i].text = DataManager.instance.nowPlayer.name; // 슬롯 이름 표시
-                Debug.Log($"슬롯 {i}에 저장된 데이터 로드됨: {DataManager.instance.nowPlayer.name}");
             }
             else
             {
@@ -41,7 +40,6 @@ public class Select : MonoBehaviour
         if (savefile[number]) // 저장된 데이터가 있는 슬롯
         {
             DataManager.instance.LoadData(); // 데이터 로드
-            Debug.Log($"슬롯 {number} 데이터 불러오기 완료: {DataManager.instance.nowPlayer.name}");
             StartGame(); // 게임 시작
         }
         else
@@ -57,7 +55,6 @@ public class Select : MonoBehaviour
 
         if (string.IsNullOrWhiteSpace(playerName)) // 이름이 비어 있는지 확인
         {
-            Debug.LogWarning("이름을 입력해야 게임을 시작할 수 있습니다.");
             return; // 이름이 없으면 중단
         }
 
@@ -76,7 +73,6 @@ public class Select : MonoBehaviour
 
     private void StartGame()
     {
-        Debug.Log("게임 시작!");
         sceneChanger.FadeToLevel(1); // 다음 씬으로 전환
     }
 }

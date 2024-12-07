@@ -13,7 +13,7 @@ public class PlayerData
     public int rebrith = 0;
     public int date = 1;
     public int score = 0;
-    public string endingType = ""; // 엔딩 타입 저장 ("success", "expelled", "bankrupt", "stress")
+    public string endingType = ""; // 엔딩 타입 저장
     public bool[] purchasedItems;
 
     public PlayerData()
@@ -63,7 +63,6 @@ public class DataManager : MonoBehaviour
         string filePath = $"{path}{nowSlot}.json";
         string data = JsonUtility.ToJson(nowPlayer);
         File.WriteAllText(filePath, data);
-        Debug.Log($"데이터 저장 완료: {filePath}");
     }
 
     public void LoadData()
@@ -73,7 +72,6 @@ public class DataManager : MonoBehaviour
         {
             string data = File.ReadAllText(filePath);
             nowPlayer = JsonUtility.FromJson<PlayerData>(data);
-            Debug.Log($"데이터 로드 완료: {filePath}");
 
             // 엔딩 타입이 비어 있으면 기본값 설정
             if (string.IsNullOrEmpty(nowPlayer.endingType))
@@ -83,7 +81,6 @@ public class DataManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"로드 실패: {filePath} 파일이 없습니다. 기본 데이터 사용.");
             nowPlayer = new PlayerData();
         }
     }

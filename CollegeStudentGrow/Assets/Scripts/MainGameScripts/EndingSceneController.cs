@@ -10,8 +10,16 @@ public class EndingSceneController : MonoBehaviour
     public CanvasGroup fadeCanvasGroup; // 화면 전체 페이드 효과용 CanvasGroup
     public Image image1; // 첫 번째 이미지
     public Image image2; // 두 번째 이미지
+
     public Image image3; // 첫 번째 이미지
     public Image image4; // 두 번째 이미지
+
+    public Image image5; // 두 번째 이미지
+
+    public Image image6; // 두 번째 이미지
+
+    public Image image7; // 두 번째 이미지
+
 
     public float fadeTime = 2f; // 페이드 시간
     public float delayTime = 2f; // 각 상태 간 대기 시간
@@ -52,6 +60,21 @@ public class EndingSceneController : MonoBehaviour
         {
             endingMessage.text = "노멀 엔딩!";
             StartCoroutine(StartWithFadeIn_normal());
+        }
+        else if (player.endingType == "expelled")
+        {
+            endingMessage.text = "제적 엔딩";
+            StartCoroutine(StartWithFadeIn_false());
+        }
+        else if(player.endingType == "bankrupt")
+        {
+            endingMessage.text = "거지 엔딩";
+            StartCoroutine(StartWithFadeIn_false_2());
+        }
+        else if(player.endingType == "stress")
+        {
+            endingMessage.text = "스트레스 과다 엔딩";
+            StartCoroutine(StartWithFadeIn_false_3());
         }
         else
         {
@@ -105,6 +128,54 @@ public class EndingSceneController : MonoBehaviour
         quitButton.gameObject.SetActive(true);
     }
 
+    private IEnumerator StartWithFadeIn_false()
+    {
+        yield return new WaitForSeconds(delayTime);
+
+        // 이미지 5 페이드인
+        image5.gameObject.SetActive(true);
+        yield return StartCoroutine(FadeIn());
+        yield return new WaitForSeconds(delayTime);
+
+        // 엔딩 메시지 출력 후 버튼 활성화
+        yield return new WaitForSeconds(delayTime);
+        rebirthButton.gameObject.SetActive(true);
+        quitButton.gameObject.SetActive(true);
+    }
+
+    private IEnumerator StartWithFadeIn_false_2()
+    {
+        yield return new WaitForSeconds(delayTime);
+
+        // 이미지 6 페이드인
+        image6.gameObject.SetActive(true);
+        yield return StartCoroutine(FadeIn());
+        yield return new WaitForSeconds(delayTime);
+
+        // 엔딩 메시지 출력 후 버튼 활성화
+        yield return new WaitForSeconds(delayTime);
+        rebirthButton.gameObject.SetActive(true);
+        quitButton.gameObject.SetActive(true);
+    }
+
+    private IEnumerator StartWithFadeIn_false_3()
+    {
+        yield return new WaitForSeconds(delayTime);
+
+        // 이미지 6 페이드인
+        image7.gameObject.SetActive(true);
+        yield return StartCoroutine(FadeIn());
+        yield return new WaitForSeconds(delayTime);
+
+        // 엔딩 메시지 출력 후 버튼 활성화
+        yield return new WaitForSeconds(delayTime);
+        rebirthButton.gameObject.SetActive(true);
+        quitButton.gameObject.SetActive(true);
+    }
+
+
+
+
     private IEnumerator FadeIn()
     {
         float time = 0f;
@@ -131,8 +202,6 @@ public class EndingSceneController : MonoBehaviour
 
     public void OnRebirthClicked()
     {
-        Debug.Log("Rebirth button clicked!");
-        // 환생 버튼 클릭 시 플레이어 데이터를 초기화하고 타이틀 씬으로 이동
         DataManager.instance.ResetPlayerData();
         SceneManager.LoadScene("Title"); // "TitleScene"을 타이틀 씬 이름으로 변경
     }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 320497b5469461c48a1ed52323616594
+guid: f356f5847c7708644b0c18d003ba9721
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,110 +93,115 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VanillLlatte_0
+      name: RecipeBook_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 24
-        width: 50
-        height: 87
+        x: 81
+        y: 1707
+        width: 57
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e200e2ad4a834c42883a5a1c29a651f
-      internalID: 227316471
+      spriteID: c289cb074a4b8eb4ab8817fe52d41b2a
+      internalID: -213733569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VanillLlatte_1
+      name: RecipeBook_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 23
-        width: 50
-        height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 63
+        y: 1404
+        width: 327
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdd3a2819a07bc641890e59c7bf4c31c
-      internalID: 671126560
+      spriteID: feb6edd7b7ba1c74a9dd929776a7c2ae
+      internalID: 1877441181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VanillLlatte_2
+      name: RecipeBook_2
       rect:
         serializedVersion: 2
-        x: 153
-        y: 23
-        width: 50
-        height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 501
+        y: 1407
+        width: 327
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82a64591de9bd224eac8bda4a549af64
-      internalID: 1328784793
+      spriteID: f6e7dbe1450b06248a3f6114582dc77c
+      internalID: 845615554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VanillLlatte_3
+      name: RecipeBook_3
       rect:
         serializedVersion: 2
-        x: 216
-        y: 22
-        width: 50
-        height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 243
+        y: 498
+        width: 627
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d8fbe01c871ee6449bb926462677280
-      internalID: 1564076160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VanillLlatte_4
-      rect:
-        serializedVersion: 2
-        x: 279
-        y: 23
-        width: 50
-        height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6422c35010cdceb4fbe39a4d57d82e60
-      internalID: 415608889
+      spriteID: ca33a53163415d146b19ca45fbf6728d
+      internalID: 1314183835
       vertices: []
       indices: 
       edges: []
@@ -212,11 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      VanillLlatte_0: 227316471
-      VanillLlatte_1: 671126560
-      VanillLlatte_2: 1328784793
-      VanillLlatte_3: 1564076160
-      VanillLlatte_4: 415608889
+      RecipeBook_0: -213733569
+      RecipeBook_1: 1877441181
+      RecipeBook_2: 845615554
+      RecipeBook_3: 1314183835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

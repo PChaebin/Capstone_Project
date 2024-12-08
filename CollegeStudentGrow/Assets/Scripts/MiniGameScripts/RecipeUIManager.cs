@@ -3,17 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
+using static UnityEngine.GraphicsBuffer;
+using UnityEngine.U2D;
 
 public class RecipeUIManager : MonoBehaviour
 {
+    public static RecipeUIManager Instance { get; private set; }
+
     [SerializeField] private GameObject recipePagePrefab;
     [SerializeField] private Transform contentParent;
 
     [SerializeField] private Button startButton;
     [SerializeField] private GameObject recipeUI;
     [SerializeField] private TMP_Text countDownText;
+    [SerializeField] private GameObject bulrPanel;
+    [SerializeField] private GameObject currentDrinkImgUI;
+    [SerializeField] private GameObject cupUI;
 
     private float recipedisplayTime = 7f;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void showRecipesUI(List<Drinks> drinks)
     {
@@ -21,6 +41,10 @@ public class RecipeUIManager : MonoBehaviour
         StartCoroutine(DisplayRecipes());
     }
 
+    /// <summary>
+    /// drinks 리스트를 사용한 ui 세팅 함수
+    /// </summary>
+    /// <param name="drinks"></param>
     public void InitUI(List<Drinks> drinks)
     {
         Debug.Log($"drinks 리스트 길이: {drinks.Count}");
@@ -67,11 +91,31 @@ public class RecipeUIManager : MonoBehaviour
         }
 
         recipeUI.SetActive(false);
+        countDownText.gameObject.SetActive(false);
+        bulrPanel.gameObject.SetActive(false);
+        
+        // 타이머 시작
+        StartCoroutine(FindObjectOfType<Timer>().StartTimer());
+
+        LeanTween.cancel(recipeUI);
     }
 
-    private void OnDestroy()
+    /// <summary>
+    /// 플레이어가 선택한 재료가 레시피와 일치할 때 제작중인 컵 이미지 변경 
+    /// </summary>
+    public void ChangeCupImg(Sprite newCupSprite)
     {
-        LeanTween.reset(); // 모든 LeanTween 애니메이션 초기화
-    }
+        if (cupUI == null)
+        {
+            Debug.LogError("씬에 배치된 컵 ui가 설정되지않음");
+        }
 
+        Image cupImage = cupUI.GetComponent<Image>();
+
+        if (cupImage != null)
+        {
+            cupImage.sprite = newCupSprite;
+        }
+
+    }
 }

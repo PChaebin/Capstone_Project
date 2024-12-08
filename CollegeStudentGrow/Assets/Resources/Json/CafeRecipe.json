@@ -1,63 +1,106 @@
-{
+ {
   "drinksList": [
     {
       "Name": "Americano",
-      "FinalImage": "MiniGame/Americano/Americano_4",
+      "FinalImageFile": "MiniGame/Americano",
+      "FinalImage": "Americano_4",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 물 넣기",
+        "3. 에스프레소 넣기"
+      ],
       "steps": [
         "ice",
         "water",
-        "aspresso"
+        "coffee"
       ],
       "Description": "현대인 필수품"
     },
     {
-      "Name": "cafeLatte",
-      "FinalImage": "MiniGame/cafeLatte/cafeLatte_4",
+      "Name": "CafeLatte",
+      "FinalImageFile": "MiniGame/CafeLatte",
+      "FinalImage": "CafeLatte_4",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 우유 넣기",
+        "3. 에스프레소 넣기"
+      ],
       "steps": [
         "ice",
         "milk",
-        "aspresso"
+        "coffee"
       ],
       "Description": "라떼는 말이야"
     },
     {
-      "Name": "VanillLlatte",
-      "FinalImage": "MiniGame/VanillLlatte/VanillLlatte_4",
+      "Name": "VanillaLatte",
+      "FinalImageFile": "MiniGame/VanillaLatte",
+      "FinalImage": "VanillaLatte_4",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 우유 넣기",
+        "3. 에스프레소 넣기",
+        "4. 바닐라 시럽 넣기"
+      ],
       "steps": [
         "ice",
         "milk",
-        "aspresso",
-        "spoon"
+        "coffee",
+        "vanilla"
       ],
       "Description": "바닐라 라떼"
     },
     {
       "Name": "GrapeFruitAde",
-      "FinalImage": "MiniGame/Americano/GrapeFruitAde_4",
+      "FinalImageFile": "MiniGame/GrapeFruitAde",
+      "FinalImage": "GrapefruitAde_5",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 소다 넣기",
+        "3. 자몽청 넣기",
+        "4. 스푼으로 섞기"
+      ],
       "steps": [
         "ice",
-        "soda",
-        "grapefruit"
+        "grapefruit",
+        "sprite",
+        "spoon"
       ],
       "Description": "상콤한 자몽에이드"
     },
     {
-      "Name": "GreenGrapeAde",
-      "FinalImage": "MiniGame/Americano/GreenGrapeAde_4",
+      "Name": "GreengrapeAde",
+      "FinalImageFile": "MiniGame/GreengrapeAde",
+      "FinalImage": "GreengrapeAde_5",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 소다 넣기",
+        "3. 청포도청 넣기",
+        "4. 스푼으로 섞기"
+      ],
       "steps": [
         "ice",
-        "soda",
-        "grapefruit_2"
+        "greengrape",
+        "sprite",
+        "spoon"
       ],
       "Description": "상콤한 청포도에이드"
     },
     {
       "Name": "LemonAde",
-      "FinalImage": "MiniGame/Americano/LemonAde_4",
+      "FinalImageFile": "MiniGame/LemonAde",
+      "FinalImage": "LemonAde_5",
+      "Recipes": [
+        "1. 얼음 넣기",
+        "2. 소다 넣기",
+        "3. 레몬청 넣기",
+        "4. 스푼으로 섞기"
+      ],
       "steps": [
         "ice",
-        "soda",
-        "lemon"
+        "lemon",
+        "sprite",
+        "spoon"
       ],
       "Description": "상콤한 레몬에이드"
     }

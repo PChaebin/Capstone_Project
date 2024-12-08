@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41fd50a62f15a3b44acbc8c1dc57f062
+guid: 320497b5469461c48a1ed52323616594
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,106 +123,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Americano_0
+      name: VanillaLatte_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 27
+        x: 27
+        y: 24
         width: 50
         height: 87
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25bd7fc0bd7cad54c99b50e8e11554c8
-      internalID: -254391501
+      spriteID: 24d9b8c8ae77bea42b751776f6128ea0
+      internalID: 1788364853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Americano_1
+      name: VanillaLatte_1
       rect:
         serializedVersion: 2
-        x: 101
-        y: 26
+        x: 87
+        y: 23
         width: 50
         height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 822930f93c2ac7d44bb7a602d1a7a2d5
-      internalID: 1829643170
+      spriteID: e0296bba67d3a6f4ca6b880f90564078
+      internalID: 1794882933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Americano_2
+      name: VanillaLatte_2
       rect:
         serializedVersion: 2
-        x: 195
-        y: 28
+        x: 153
+        y: 23
         width: 50
         height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ded115e057b4d114e898cdf13b7d738b
-      internalID: -1792471575
+      spriteID: e983aba847e12dc468b2de99f4a0bdce
+      internalID: 1490082707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Americano_3
+      name: VanillaLatte_3
       rect:
         serializedVersion: 2
-        x: 282
-        y: 27
+        x: 216
+        y: 22
         width: 50
         height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 826cc19b86776ac44bba42297f369d57
-      internalID: 2129115571
+      spriteID: d5f4864ce5468e5418108395604f47b0
+      internalID: 1965554932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Americano_4
+      name: VanillaLatte_4
       rect:
         serializedVersion: 2
-        x: 375
-        y: 27
+        x: 279
+        y: 23
         width: 50
         height: 87
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad5a00c0948f84c40b87432e1e3a8f98
-      internalID: -78364542
+      spriteID: 80e85e5ad6b631f42a0259cd874c092f
+      internalID: 611639807
       vertices: []
       indices: 
       edges: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Americano_0: -254391501
-      Americano_1: 1829643170
-      Americano_2: -1792471575
-      Americano_3: 2129115571
-      Americano_4: -78364542
+      VanillaLatte_0: 1788364853
+      VanillaLatte_1: 1794882933
+      VanillaLatte_2: 1490082707
+      VanillaLatte_3: 1965554932
+      VanillaLatte_4: 611639807
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

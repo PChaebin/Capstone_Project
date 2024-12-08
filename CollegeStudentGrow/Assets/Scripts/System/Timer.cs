@@ -7,19 +7,13 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
 
-    [SerializeField] private float time;
+    [SerializeField] private float time = 30;
     [SerializeField] private float curTime;
 
     int minute;
     int second;
 
-    private void Awake()
-    {
-        time = 30;
-        StartCoroutine(StartTimer());
-    }
-
-    IEnumerator StartTimer()
+    public IEnumerator StartTimer()
     {
         curTime = time;
         while (curTime > 0)

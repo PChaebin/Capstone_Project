@@ -9,7 +9,9 @@ using UnityEngine;
 public class Drinks
 {
     public string Name;
+    public string FinalImageFile;
     public string FinalImage;
+    public List<string> Recipes;
     public List<string> steps;
     public string Description;
 }
@@ -25,11 +27,15 @@ public class RecipeManager : MonoBehaviour
     private DrinksList drinks;
     private int recipeCount = 3;
 
+    private Queue<Drinks> recipesQueue = new Queue<Drinks>();
+
     /// <summary>
     /// Json 데이터 로드 함수
     /// </summary>
     public void LoadRecipesToJson()
     {
+        recipesQueue.Clear();
+
         TextAsset jsonFile = Resources.Load<TextAsset>("Json/CafeRecipe");
         Debug.Log("json 파일 읽음");
 
@@ -60,6 +66,8 @@ public class RecipeManager : MonoBehaviour
     /// <returns></returns>
     public List<Drinks> GetRandomRecipes()
     {
+        // Queue<Drinks> recipes = new Queue<Drinks>();
+
         if(drinks == null || drinks.drinksList.Count == 0)
         {
             Debug.LogError("레시피 Json 파일이 존재하지않음!!");
@@ -77,9 +85,15 @@ public class RecipeManager : MonoBehaviour
             {
                 usedIndexes.Add(randomIndex);
                 selectedRecipes.Add(drinks.drinksList[randomIndex]);
+                recipesQueue.Enqueue(drinks.drinksList[randomIndex]);
             }
         }
 
         return selectedRecipes;
+    }
+
+    public Queue<Drinks> GetRecipeQueue()
+    {
+        return recipesQueue;
     }
 }

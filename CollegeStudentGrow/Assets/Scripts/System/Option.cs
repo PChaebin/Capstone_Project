@@ -16,8 +16,8 @@ public class Option : MonoBehaviour
 
         if (optionButton != null && xButton != null)
         {
-            optionButton.onClick.AddListener();
-            xButton.onClick.AddListener();
+            optionButton.onClick.AddListener(OnOptionButtonClicked);
+            xButton.onClick.AddListener(OnXButtonClicked);
         }
     }
 

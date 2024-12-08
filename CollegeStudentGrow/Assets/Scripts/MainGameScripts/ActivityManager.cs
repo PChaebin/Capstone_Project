@@ -42,7 +42,7 @@ public class ActivityManager : MonoBehaviour
     public void DoPartTimeJob()
     {
         ModifyPlayerData(coin: 20, stress: 10);
-        StartCoroutine(ShowCountdownPanelWithImage(partTimeJobImage, "알바하는 중"));
+        
     }
 
     public void GoOnTrip()

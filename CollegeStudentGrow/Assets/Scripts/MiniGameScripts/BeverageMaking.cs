@@ -36,6 +36,7 @@ public class BeverageMaking : MonoBehaviour
     private int currentStepIndex = 0;
 
     private Sprite sprite;
+    private int finishedCount = 0;
 
     private void Start()
     {
@@ -117,13 +118,16 @@ public class BeverageMaking : MonoBehaviour
     {
         if (drinkSpriteMap.TryGetValue(currentDrink.Name, out List<Sprite> sprites))
         {
-            if (sprites.Count > 0)
+            if (sprites.Count >= 0 && currentStepIndex < sprites.Count)
             {
                 sprite = sprites[currentStepIndex];
                 Debug.Log("인덱스 " + (currentStepIndex - 1));
                 RecipeUIManager.Instance.ChangeCupImg(sprite);
             }
         }
+
+        AudioManager.instance.PlaySfx(AudioManager.SFX.A_Cup);
+        finishedCount++;
     }
 
     /// <summary>
@@ -148,19 +152,28 @@ public class BeverageMaking : MonoBehaviour
         if (recipesQueue.Count > 0)
         {
             recipesQueue.Dequeue();
-            if(recipesQueue.Count > 0)
+            Debug.Log($"남은 레시피 개수: {recipesQueue.Count}");
+
+            if (recipesQueue.Count > 0)
             {
                 currentDrink = recipesQueue.Peek();
                 currentStepIndex = 0;
 
                 StartCoroutine(EmptyCupImage());
             }
-        }
-        else
-        {
-            Debug.Log("모든 음료 제작 완료!!");
+            else
+            {
+                Debug.Log("모든 음료 제작 완료!!");
 
-            // 음료 제작이 완료 됐을 때 다음 단계
+                // 음료 제작이 완료 됐을 때 다음 단계
+                FinishedMaking();
+                return;
+            }
         }
+    }
+
+    public void FinishedMaking()
+    {
+        RecipeUIManager.Instance.FinishedText("퇴 근");
     }
 }

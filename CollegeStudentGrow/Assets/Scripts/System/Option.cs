@@ -12,22 +12,28 @@ public class Option : MonoBehaviour
 
     private void Start()
     {
-        optionUI.SetActive(false);
-
         if (optionButton != null && xButton != null)
         {
             optionButton.onClick.AddListener(OnOptionButtonClicked);
+            Debug.Log("Option Button Clicked AddListener");
             xButton.onClick.AddListener(OnXButtonClicked);
+            Debug.Log("X Button Clicked AddListener");
         }
     }
 
     private void OnOptionButtonClicked()
     {
+        Debug.Log("Option Button Clicked");
         optionUI.SetActive(true);
+
+        Time.timeScale = 0;
+
+        optionUI.transform.SetAsLastSibling();
     }
 
     private void OnXButtonClicked()
     {
+        Time.timeScale = 1;
         optionUI.SetActive(false);
     }
 }

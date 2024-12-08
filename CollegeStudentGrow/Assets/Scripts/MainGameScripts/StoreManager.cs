@@ -22,7 +22,6 @@ public class StoreManager : MonoBehaviour
     {
         if (roomItems == null || roomItems.Length == 0 || itemPrices == null || itemPrices.Length == 0)
         {
-            Debug.LogError("RoomItems 또는 ItemPrices가 비어 있습니다. Inspector에서 값을 추가하세요.");
             return;
         }
 
@@ -30,54 +29,42 @@ public class StoreManager : MonoBehaviour
         UpdateUI();
         UpdateItemInfo();
 
-        // 구매한 아이템 로드 및 활성화
         for (int i = 0; i < roomItems.Length; i++)
         {
             if (DataManager.instance.nowPlayer.purchasedItems[i])
             {
-                roomItems[i].SetActive(true); // 구매한 아이템 활성화
+                roomItems[i].SetActive(true); // 구매한 아이템 
             }
             else
             {
-                roomItems[i].SetActive(false); // 구매하지 않은 아이템 비활성화
+                roomItems[i].SetActive(false); // 구매하지 않은 아이템
             }
         }
     }
 
     public void BuyItem()
     {
-        // 이미 구매한 아이템인지 확인
-        if (DataManager.instance.nowPlayer.purchasedItems[currentPage])
+        if (DataManager.instance.nowPlayer.purchasedItems[currentPage]) // 이미 구매
         {
-            Debug.Log("이미 구매한 아이템입니다.");
-            return; // 함수 종료
+            return; 
         }
 
         int cost = itemPrices[currentPage];
 
         if (DataManager.instance.nowPlayer.coin >= cost)
-        {
-            // 코인 차감 및 상태 업데이트
+        {         
             DataManager.instance.nowPlayer.coin -= cost;
-            DataManager.instance.nowPlayer.purchasedItems[currentPage] = true; // 구매 상태 저장
-            Debug.Log($"아이템 구매 완료! 가격: {cost}");
+            DataManager.instance.nowPlayer.purchasedItems[currentPage] = true; // 구매 완료
 
-            // Room 아이템 활성화
             roomItems[currentPage].SetActive(true);
             UpdateUI();
 
-            // 데이터 저장
             DataManager.instance.SaveData();
-        }
-        else
-        {
-            Debug.Log("동전이 부족합니다.");
         }
     }
 
     private void UpdateUI()
     {
-        // 코인과 레벨 텍스트 업데이트
         coinText.text = $"Coin: {DataManager.instance.nowPlayer.coin}";
         levelText.text = $"Level: {DataManager.instance.nowPlayer.level}";
     }

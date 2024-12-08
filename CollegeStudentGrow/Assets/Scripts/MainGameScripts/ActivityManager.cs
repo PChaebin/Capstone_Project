@@ -168,30 +168,28 @@ public class ActivityManager : MonoBehaviour
         gradeText.text = $"Grade: {player.grade}";
         scoreText.text = $"Score: {player.score}";
 
-        // 己利 0~100 荤捞
         scoreSlider.value = player.score;
 
-        // 浇扼捞歹狼 fillRect 祸惑
         Image fillImage = scoreSlider.fillRect.GetComponent<Image>();
 
         if (player.score >= 99)
-            fillImage.color = Color.green; // A+老 版快
+            fillImage.color = Color.green; // A+
         else if (player.score >= 87.5)
-            fillImage.color = Color.green; // A老 版快
+            fillImage.color = Color.green; // A
         else if (player.score >= 75)
-            fillImage.color = Color.green; // B+老 版快
+            fillImage.color = Color.green; // B+
         else if (player.score >= 62.5)
-            fillImage.color = Color.green; // B老 版快
+            fillImage.color = Color.green; // B
         else if (player.score >= 50)
-            fillImage.color = Color.green; // C+老 版快
+            fillImage.color = Color.green; // C+
         else if (player.score >= 37.5)
-            fillImage.color = Color.green; // C老 版快
+            fillImage.color = Color.green; // C
         else if (player.score >= 25)
-            fillImage.color = Color.green; // D+老 版快
+            fillImage.color = Color.green; // D+
         else if (player.score >= 12.5)
-            fillImage.color = Color.green; // D老 版快
+            fillImage.color = Color.green; // D
         else
-            fillImage.color = Color.green; // F老 版快
+            fillImage.color = Color.green; // F
     }
 
 

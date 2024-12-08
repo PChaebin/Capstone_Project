@@ -1,0 +1,1161 @@
+fileFormatVersion: 2
+guid: 6cf7298ebbd257c4085c0b4a3006ab8f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHAR MOTION 2_0
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1566
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afccd8f03dc3e6240873b878556b5d8c
+      internalID: -1029330980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_1
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1566
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4886fc964e5c1f34cb74e358fc640e89
+      internalID: -1602808205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_2
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1566
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afaba4c15eb4fd24ebb317157c7f6489
+      internalID: -1405560554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_3
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1566
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ce4fdb64b5bdf46982b88b96ddba51
+      internalID: -2063853132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_4
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 1566
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d85a185f966c841b663fd783afabc8
+      internalID: 714932399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_5
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1569
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1690990849d8c06449acd65fb6421ed0
+      internalID: 410533910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_6
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1566
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5e7ba5f83a2804fa6ea754f842a8b2
+      internalID: 1466567841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_7
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 1569
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440d6640077a4ca4ab0eff597f4a9def
+      internalID: -690045759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_8
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1395
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9049240ecce72b41ab1614f111f964c
+      internalID: -1707335255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_9
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1392
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2aaf88eebaebec49862be0fb47f98e7
+      internalID: 1411314492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_10
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1395
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368a7565874feed4aa14121c1327e812
+      internalID: 1386920884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_11
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1392
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28b8e71901d68847acf529f9ae0e017
+      internalID: 1872690460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_12
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 1392
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cba90bcd76d6a44bc6a806f845feaf
+      internalID: 1898979599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_13
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1392
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7329c4b238ccc4d8956c0b275eda72
+      internalID: 1212104629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_14
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1392
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed0975c9dc4633479a9123330b99665
+      internalID: -961673243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_15
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 1392
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5fab82fefb996a4c937714a504e73db
+      internalID: -1038610575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_16
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1242
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3527a6fbd2dd7a4794e8f1a2f892b67
+      internalID: 1343936318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_17
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1242
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332b5a88e5dc19c4f966a13b8aa36cde
+      internalID: -517094390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_18
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1242
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633266f9764d0a34191d566026d15b99
+      internalID: 1145853798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_19
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 1242
+        width: 72
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7cf71485499f2f41826906884eac86a
+      internalID: -843341957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_20
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 1242
+        width: 72
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d9b8278a5d5dd4a8ff53271875dc23
+      internalID: 662300902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_21
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1242
+        width: 72
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3097a95c482794949adb732c3c10b5d3
+      internalID: -821446443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_22
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1242
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76073bf0fc67404cb93a5baabf3c916
+      internalID: -1402801408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_23
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1242
+        width: 72
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd28e1d5cdf5f8545ac98e5755d04634
+      internalID: 903275023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_24
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1083
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cedb435d59131d14998be5b22d647d8b
+      internalID: -335773682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_25
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1083
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5789dc93fa78e2349b7cfb39db0d6a39
+      internalID: 36385998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_26
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1083
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e3bb45e932bd44aadf72bd1fd2c137
+      internalID: -1921081471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_27
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 1086
+        width: 72
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2151b2e98d7ca64680c901457c4524d
+      internalID: 543595104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_28
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1089
+        width: 72
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0080bfa4d4e23df4b8b16a4ea4c57c7a
+      internalID: 479311920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_29
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1083
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68df7e376df5fb4796e6aeebe58112f
+      internalID: 1434260169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_30
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1083
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0054c2a12b849649947e28189e18073
+      internalID: -1623447918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_31
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 900
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333e7a0bd5a411d4fb02f64465258e3d
+      internalID: -1848838769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_32
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 900
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9d2e278dc91f143bd419c4e047d590
+      internalID: 739051154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_33
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 906
+        width: 72
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d6c4bced46ef74fa772d9d1f2f710a
+      internalID: -1750909668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_34
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 903
+        width: 72
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79fb3043a5e0c548835dd7d36fac1c8
+      internalID: -1078598478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_35
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 900
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 011ce788f516c574f93a829244b718ab
+      internalID: 730719208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_36
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 900
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 086b1d2dfeb5b7f4297632f10d6419f7
+      internalID: -899642195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_37
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 897
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e80ac8bf9fadb04593dabc4e6c93998
+      internalID: 352892165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_38
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 720
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92010455843c3f47a6f4b6d997c6b6f
+      internalID: 1828542838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_39
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 714
+        width: 72
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919e6d348eb688244927ed8b6a014cd2
+      internalID: -1514251361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_40
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 720
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81aeaf4874b6d7942b35db07441867b7
+      internalID: -130524535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_41
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 714
+        width: 72
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e853469a5a8aa4a8894d9224604e1e
+      internalID: 813532197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_42
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 720
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700172db002a93042ac9afc6a3058367
+      internalID: -2092811869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_43
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 714
+        width: 72
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2f14079464e3f45826c96655da568b
+      internalID: -190881553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_44
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 720
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6e9b1451b5a824b8cb340cb5373f28
+      internalID: -948857147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_45
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 150
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764736b3edc7cbe41b48222f2d8b5552
+      internalID: -1878188286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAR MOTION 2_46
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 150
+        width: 72
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3d4935231ad4d40aa73fc94703c70b
+      internalID: -514245069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CHAR MOTION 2_0: -1029330980
+      CHAR MOTION 2_1: -1602808205
+      CHAR MOTION 2_10: 1386920884
+      CHAR MOTION 2_11: 1872690460
+      CHAR MOTION 2_12: 1898979599
+      CHAR MOTION 2_13: 1212104629
+      CHAR MOTION 2_14: -961673243
+      CHAR MOTION 2_15: -1038610575
+      CHAR MOTION 2_16: 1343936318
+      CHAR MOTION 2_17: -517094390
+      CHAR MOTION 2_18: 1145853798
+      CHAR MOTION 2_19: -843341957
+      CHAR MOTION 2_2: -1405560554
+      CHAR MOTION 2_20: 662300902
+      CHAR MOTION 2_21: -821446443
+      CHAR MOTION 2_22: -1402801408
+      CHAR MOTION 2_23: 903275023
+      CHAR MOTION 2_24: -335773682
+      CHAR MOTION 2_25: 36385998
+      CHAR MOTION 2_26: -1921081471
+      CHAR MOTION 2_27: 543595104
+      CHAR MOTION 2_28: 479311920
+      CHAR MOTION 2_29: 1434260169
+      CHAR MOTION 2_3: -2063853132
+      CHAR MOTION 2_30: -1623447918
+      CHAR MOTION 2_31: -1848838769
+      CHAR MOTION 2_32: 739051154
+      CHAR MOTION 2_33: -1750909668
+      CHAR MOTION 2_34: -1078598478
+      CHAR MOTION 2_35: 730719208
+      CHAR MOTION 2_36: -899642195
+      CHAR MOTION 2_37: 352892165
+      CHAR MOTION 2_38: 1828542838
+      CHAR MOTION 2_39: -1514251361
+      CHAR MOTION 2_4: 714932399
+      CHAR MOTION 2_40: -130524535
+      CHAR MOTION 2_41: 813532197
+      CHAR MOTION 2_42: -2092811869
+      CHAR MOTION 2_43: -190881553
+      CHAR MOTION 2_44: -948857147
+      CHAR MOTION 2_45: -1878188286
+      CHAR MOTION 2_46: -514245069
+      CHAR MOTION 2_5: 410533910
+      CHAR MOTION 2_6: 1466567841
+      CHAR MOTION 2_7: -690045759
+      CHAR MOTION 2_8: -1707335255
+      CHAR MOTION 2_9: 1411314492
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

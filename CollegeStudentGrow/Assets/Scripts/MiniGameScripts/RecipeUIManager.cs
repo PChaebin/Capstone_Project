@@ -18,8 +18,13 @@ public class RecipeUIManager : MonoBehaviour
     [SerializeField] private GameObject recipeUI;
     [SerializeField] private TMP_Text countDownText;
     [SerializeField] private GameObject bulrPanel;
-    [SerializeField] private GameObject currentDrinkImgUI;
     [SerializeField] private GameObject cupUI;
+
+    [Header("퇴근 텍스트")]
+    [SerializeField] Text finishedText;
+
+    [Header("텍스트 효과")]
+    [SerializeField] private KoreanTyperDemo_Cursor textTyper;
 
     private float recipedisplayTime = 7f;
 
@@ -117,5 +122,19 @@ public class RecipeUIManager : MonoBehaviour
             cupImage.sprite = newCupSprite;
         }
 
+    }
+
+    public void FinishedText(string str)
+    {
+        StartCoroutine(FinishedTextCoroutine(str));
+    }
+
+    private IEnumerator FinishedTextCoroutine(string str)
+    {
+        yield return new WaitForSeconds(1f);
+
+        AudioManager.instance.PlaySfx(AudioManager.SFX.Finish);
+        finishedText.gameObject.SetActive(true);
+        StartCoroutine(textTyper.TypingCoroutine(str));
     }
 }

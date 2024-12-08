@@ -36,10 +36,10 @@ public class AudioManager : MonoBehaviour
     /// <returns></returns>
     public enum SFX
     {
-        TestSFX_1,
-        TestSFX_2,
-        TestSFX_3,
-        TestSFX_4
+        // MiniGame_SFX
+        A_Cup,
+        Failed,
+        Finish
     }
 
     void Awake()

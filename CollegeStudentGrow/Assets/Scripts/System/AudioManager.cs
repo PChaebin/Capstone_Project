@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup sfxMixer;
 
     [Header("BGM 설정")]
-    public AudioClip bgmClip;
+    public AudioClip[] bgmClips;
     public float bgmVolume;
     private AudioSource bgmPlayer;
 
@@ -30,6 +30,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Slider bgmVolSlider;
     [SerializeField] private Slider sfxVolSlider;
 
+    [Header("Option UI")]
+    [SerializeField] private GameObject audioOptionUI;
+    private Transform originalParent;
+
     /// <summary>
     /// 현재 효과음 종류
     /// </summary>
@@ -44,24 +48,59 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-        Init();
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); // 중복 방지
+        }
     }
 
     void Start()
     {
+        Init();
         InitSliders();
 
+        // 슬라이더 이벤트 등록
         masterVolSlider.onValueChanged.AddListener(SetMasterVolume);
         bgmVolSlider.onValueChanged.AddListener(SetBgmVolume);
         sfxVolSlider.onValueChanged.AddListener(SetSfxVolume);
     }
 
     /// <summary>
-    /// 슬라이더 초기화 (오디오 믹서의 현재 값 반영)
+    /// 씬 이름에 따라 적절한 BGM 설정
     /// </summary>
-    /// <returns></returns>
+    /// <param name="sceneName">현재 씬 이름</param>
+    private void SetBgmForScene(string sceneName)
+    {
+        AudioClip selectedBgm = null;
+
+        // 씬 이름에 따라 BGM 선택
+        if (sceneName == "Title" || sceneName == "InGame")
+        {
+            selectedBgm = bgmClips[0]; // Title 씬용 BGM
+        }
+        else if (sceneName == "MiniGame")
+        {
+            selectedBgm = bgmClips[2]; // MiniGame 씬용 BGM
+        }
+        else
+        {
+            Debug.LogWarning($"'{sceneName}'에 대한 BGM 설정이 없습니다. 기본값을 사용합니다.");
+        }
+
+        // 선택된 BGM을 재생
+        if (selectedBgm != null && bgmPlayer.clip != selectedBgm)
+        {
+            bgmPlayer.clip = selectedBgm;
+            PlayBgm(true); // BGM 재생
+            Debug.Log($"'{sceneName}' 씬에 맞는 BGM을 재생합니다: {selectedBgm.name}");
+        }
+    }
+
     void InitSliders()
     {
         float volume;
@@ -82,26 +121,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 오디오 플레이어 초기화
-    /// </summary>
-    /// <returns></returns>
     void Init()
     {
-        // BGM Player 초기화
         GameObject bgmObject = new GameObject("BgmPlayer");
         bgmObject.transform.parent = transform;
         bgmPlayer = bgmObject.AddComponent<AudioSource>();
         bgmPlayer.playOnAwake = false;
         bgmPlayer.loop = true;
         bgmPlayer.volume = bgmVolume;
-        bgmPlayer.clip = bgmClip;
-
         bgmPlayer.outputAudioMixerGroup = bgmMixer;
 
         PlayBgm(true);
 
-        // SFX Player 초기화
         GameObject sfxObject = new GameObject("SfxPlayer");
         sfxObject.transform.parent = transform;
         sfxPlayers = new AudioSource[sfxChannels];
@@ -114,15 +145,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// BGM 재생
-    /// </summary>
-    /// <returns></returns>
     public void PlayBgm(bool isBgmPlay)
     {
         if (isBgmPlay)
         {
-            bgmPlayer.Play();
+            if (!bgmPlayer.isPlaying)
+                bgmPlayer.Play();
         }
         else
         {
@@ -130,10 +158,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// SFX 재생
-    /// </summary>
-    /// <returns></returns>
     public void PlaySfx(SFX sfx)
     {
         for (int index = 0; index < sfxPlayers.Length; index++)
@@ -152,11 +176,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
-    /// <summary>
-    /// 슬라이더 값을 데시벨 값으로 변환
-    /// </summary>
-    /// <returns></returns>
     public void SetMasterVolume(float volume)
     {
         volume = Mathf.Clamp(volume, 0.001f, 1f);

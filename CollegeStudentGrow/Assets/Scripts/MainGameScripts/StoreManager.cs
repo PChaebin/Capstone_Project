@@ -55,6 +55,8 @@ public class StoreManager : MonoBehaviour
         {         
             DataManager.instance.nowPlayer.coin -= cost;
             DataManager.instance.nowPlayer.purchasedItems[currentPage] = true; // 구매 완료
+            
+            AudioManager.instance.PlaySfx(AudioManager.SFX.BuyItem);
 
             roomItems[currentPage].SetActive(true);
             UpdateUI();

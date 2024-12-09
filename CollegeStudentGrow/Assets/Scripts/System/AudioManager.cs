@@ -4,6 +4,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
@@ -30,16 +31,16 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Slider bgmVolSlider;
     [SerializeField] private Slider sfxVolSlider;
 
-    [Header("Option UI")]
-    [SerializeField] private GameObject audioOptionUI;
-    private Transform originalParent;
-
     /// <summary>
-    /// 현재 효과음 종류
+    /// 현재 효과음 종류 (인스펙터 창이랑 순서 꼭 맞추기)
     /// </summary>
     /// <returns></returns>
     public enum SFX
     {
+        // Main_SFX
+        BuyItem,
+        Coin,
+        NextDay,
         // MiniGame_SFX
         A_Cup,
         Failed,
@@ -55,19 +56,25 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // 중복 방지
+            Destroy(gameObject);
         }
+
+        Init();
     }
 
-    void Start()
+    void OnEnable()
     {
-        Init();
-        InitSliders();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
-        // 슬라이더 이벤트 등록
-        masterVolSlider.onValueChanged.AddListener(SetMasterVolume);
-        bgmVolSlider.onValueChanged.AddListener(SetBgmVolume);
-        sfxVolSlider.onValueChanged.AddListener(SetSfxVolume);
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SetBgmForScene(scene.name);
     }
 
     /// <summary>
@@ -78,49 +85,30 @@ public class AudioManager : MonoBehaviour
     {
         AudioClip selectedBgm = null;
 
-        // 씬 이름에 따라 BGM 선택
-        if (sceneName == "Title" || sceneName == "InGame")
+        if (sceneName == "Title" || sceneName == "inGame")
         {
-            selectedBgm = bgmClips[0]; // Title 씬용 BGM
+            selectedBgm = bgmClips[0];
         }
-        else if (sceneName == "MiniGame")
+        else if (sceneName == "MiniGameTest")
         {
-            selectedBgm = bgmClips[2]; // MiniGame 씬용 BGM
+            selectedBgm = bgmClips[1];
         }
         else
         {
             Debug.LogWarning($"'{sceneName}'에 대한 BGM 설정이 없습니다. 기본값을 사용합니다.");
         }
 
-        // 선택된 BGM을 재생
         if (selectedBgm != null && bgmPlayer.clip != selectedBgm)
         {
             bgmPlayer.clip = selectedBgm;
-            PlayBgm(true); // BGM 재생
-            Debug.Log($"'{sceneName}' 씬에 맞는 BGM을 재생합니다: {selectedBgm.name}");
+            bgmPlayer.Play();
         }
     }
 
-    void InitSliders()
-    {
-        float volume;
-
-        if (audioMixer.GetFloat("MasterVol", out volume))
-        {
-            masterVolSlider.value = Mathf.Pow(10, volume / 20);
-        }
-
-        if (audioMixer.GetFloat("BGMVol", out volume))
-        {
-            bgmVolSlider.value = Mathf.Pow(10, volume / 20);
-        }
-
-        if (audioMixer.GetFloat("SFXVol", out volume))
-        {
-            sfxVolSlider.value = Mathf.Pow(10, volume / 20);
-        }
-    }
-
+    
+    /// <summary>
+    /// BGM 및 SFX 사운드 플레이어 초기화
+    /// </summary>
     void Init()
     {
         GameObject bgmObject = new GameObject("BgmPlayer");
@@ -130,8 +118,6 @@ public class AudioManager : MonoBehaviour
         bgmPlayer.loop = true;
         bgmPlayer.volume = bgmVolume;
         bgmPlayer.outputAudioMixerGroup = bgmMixer;
-
-        PlayBgm(true);
 
         GameObject sfxObject = new GameObject("SfxPlayer");
         sfxObject.transform.parent = transform;
@@ -145,19 +131,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayBgm(bool isBgmPlay)
-    {
-        if (isBgmPlay)
-        {
-            if (!bgmPlayer.isPlaying)
-                bgmPlayer.Play();
-        }
-        else
-        {
-            bgmPlayer.Stop();
-        }
-    }
-
+    /// <summary>
+    /// 효과음 플레이
+    /// </summary>
+    /// <param name="sfx"></param>
     public void PlaySfx(SFX sfx)
     {
         for (int index = 0; index < sfxPlayers.Length; index++)
@@ -176,21 +153,34 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///  볼륨 믹서 셋팅 및 저장
+    /// </summary>
+    /// <param name="volume"></param>
     public void SetMasterVolume(float volume)
     {
         volume = Mathf.Clamp(volume, 0.001f, 1f);
         audioMixer.SetFloat("MasterVol", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("MasterVol", volume);
     }
 
     public void SetBgmVolume(float volume)
     {
         volume = Mathf.Clamp(volume, 0.001f, 1f);
         audioMixer.SetFloat("BGMVol", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("BGMVol", volume);
     }
 
     public void SetSfxVolume(float volume)
     {
         volume = Mathf.Clamp(volume, 0.001f, 1f);
         audioMixer.SetFloat("SFXVol", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("SFXVol", volume);
+    }
+
+    public float GetVolume(string volumeName)
+    {
+        audioMixer.GetFloat(volumeName, out float value);
+        return Mathf.Pow(10, value / 20);
     }
 }

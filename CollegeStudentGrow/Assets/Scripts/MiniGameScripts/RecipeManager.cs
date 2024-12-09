@@ -66,8 +66,6 @@ public class RecipeManager : MonoBehaviour
     /// <returns></returns>
     public List<Drinks> GetRandomRecipes()
     {
-        // Queue<Drinks> recipes = new Queue<Drinks>();
-
         if(drinks == null || drinks.drinksList.Count == 0)
         {
             Debug.LogError("레시피 Json 파일이 존재하지않음!!");

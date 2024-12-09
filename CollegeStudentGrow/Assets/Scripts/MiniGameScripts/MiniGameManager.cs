@@ -45,4 +45,9 @@ public class MiniGameManager : MonoBehaviour
         startButton.gameObject.SetActive(false);
         gameUI.SetActive(true);
     }
+
+    public void OnGetOff()
+    {
+        AudioManager.instance.PlaySfx(AudioManager.SFX.Coin);
+    }
 }

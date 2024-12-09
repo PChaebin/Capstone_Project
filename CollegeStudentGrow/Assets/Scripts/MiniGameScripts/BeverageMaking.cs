@@ -56,7 +56,7 @@ public class BeverageMaking : MonoBehaviour
     }
 
     /// <summary>
-    /// Dictionary로 음료 - 스프라이트 맵핑
+    /// Dictionary로 음료 - 스프라이트 맵핑 (음료수 추가시 여기도 꼭 추가!!!)
     /// </summary>
     private void InitDrinkSpriteMap()
     {
@@ -81,16 +81,12 @@ public class BeverageMaking : MonoBehaviour
         {
             currentStepIndex++;
 
-            // 음료 컵 ui 변경
             CupUIChange();
 
-            // 레시피 완료 확인
             if (currentStepIndex == currentDrink.steps.Count)
             {
                 Debug.Log($"음료 {currentDrink.Name} 완성!");
                 FinalCupImage();
-
-                // 다음 레시피 넘어가기
                 NextRecipe();
             }
         }
@@ -171,7 +167,9 @@ public class BeverageMaking : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// 음료 제작 완료 후 다음 단계
+    /// </summary>
     public void FinishedMaking()
     {
         RecipeUIManager.Instance.FinishedText("퇴 근");

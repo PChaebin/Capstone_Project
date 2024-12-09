@@ -148,6 +148,8 @@ public class ActivityManager : MonoBehaviour
     {
         DataManager.instance.nowPlayer.date++;
 
+        AudioManager.instance.PlaySfx(AudioManager.SFX.NextDay);
+
         var endingManager = FindObjectOfType<EndingManager>();
         if (endingManager != null)
         {
